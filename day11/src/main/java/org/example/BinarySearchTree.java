@@ -45,9 +45,82 @@ public class BinarySearchTree {
 
 
     //remove
+//      3) 삭제
+//            (1) 자식 노드가 없는 노드 삭제
+//    그냥 삭제
+//
+//            (2) 자식이 하나인 노드 삭제
+//    삭제하는 노드 대신에 자식 노드로 대체
+//
+//            (3) 자식이 두개인 노드 삭제
+//    왼쪽을 기준으로 했을 때
+//    삭제하는 노드 대신에 왼쪽 서브트리에서 가장 큰 노드로 대체
+//
+//    오른쪽을 기준으로 했을 때
+//    삭제하는 노드 대신에 오른쪽 서브트리에서 가장 작은 노드로 대체
+
+    public void remove(Integer data){
+        if (root == null){
+            System.out.println("빈트리");
+        }else {
+            removeRecur(data, root);
+        }
+    }
+    public Node removeRecur(Integer data, Node node){
+        if (node.getData() == data){
+            if (node.getRight() == null && node.getLeft() == null){
+                node = null;
+            } else if (node.getRight() == null && node.getLeft() != null) {
+                node = node.getLeft();
+            } else if (node.getRight() != null && node.getLeft() == null) {
+                node = node.getRight();
+            }else {
+                //왼쪽기준
+                Node lastNode;
+                lastNode = node.getLeft();
+                if (lastNode.getRight() == null){
+                    node = lastNode;
+                }else {
+                    while (lastNode != null){
+                        if (lastNode.getRight().getRight() == null){
+                            if (lastNode.getRight().getLeft() != null){
+                                Node tmp;
+                                tmp =  lastNode.getRight();
+                                lastNode.getRight().setRight(node.getRight());
+                                lastNode.setRight(lastNode.getRight().getLeft());
+                                tmp.setLeft(node.getLeft());
+                                node = tmp;
+                                return node;
+                            }else {
+                                lastNode.getRight().setRight(node.getRight());
+                                lastNode.getRight().setLeft(node.getLeft());
+
+                                node = lastNode.getRight();
+                                lastNode.setRight(null);
+                                return node;
+                            }
+
+                        }
+                        lastNode = lastNode.getRight();
+                    }
+                }
+            }
+        }else {
+            if (node.getData() < data){
+                node = removeRecur(data, node.getRight());
+
+            }else {
+                node = removeRecur(data, node.getLeft());
+            }
+        }
+        return node;
+    }
+
 
 
     public Node getRoot() {
         return root;
     }
+
+
 }
