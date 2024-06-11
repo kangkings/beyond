@@ -22,5 +22,12 @@ public class TreeTest {
         bst.remove(33);
         TreePrinter.print(bst.getRoot());
 
+        Trie t = new Trie();
+        t.insert("kang");
+        t.insert("kanf");
+        t.insert("kans");
+        t.insert("kana");
+        t.printTrie();
+
     }
 }
