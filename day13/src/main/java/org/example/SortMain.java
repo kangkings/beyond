@@ -17,6 +17,5 @@ public class SortMain {
         bs.sort(arr);
         bs.printArr(arr);
 
-
     }
 }
