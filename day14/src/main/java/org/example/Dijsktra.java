@@ -10,16 +10,16 @@ public class Dijsktra {
 
     int cnt;
 
-    public int findPath(int nodeNum, int[][] graph, int k) {
+    public int[] findPath(int nodeNum, int[][] graph, int s,int a, int b) {
         cnt = 0;
         visited = new boolean[nodeNum];
         costs = new int[nodeNum];
         path = new int[nodeNum];
 
         Arrays.fill(costs, INF);
-        Arrays.fill(path, -1);
+        Arrays.fill(path, 0);
 
-        int startNode = 0;
+        int startNode = s-1;
         costs[startNode] = 0;
 
         for (int i = 0; i < nodeNum - 1; i++) {
@@ -51,13 +51,13 @@ public class Dijsktra {
             }
         }
 
-        for (int i = 0; i < costs.length; i++) {
-            if (costs[i] <= k){
-                cnt++;
-            }
-        }
-        System.out.printf("%d개 있음",cnt);
-        return cnt;
+//        for (int i = 0; i < costs.length; i++) {
+//            if (costs[i] <= k){
+//                cnt++;
+//            }
+//        }
+//        System.out.printf("%d개 있음",cnt);
+        return costs;
     }
 
     private int findMinNode(int[] costs, boolean[] visited) {
