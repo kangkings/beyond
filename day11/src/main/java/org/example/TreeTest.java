@@ -29,5 +29,12 @@ public class TreeTest {
         t.insert("kana");
         t.printTrie();
 
+        int res = t.search("kangs");
+        if (res > 0){
+            System.out.println("단어 존재");
+        }else {
+            System.out.println("단어 없음");
+        }
+
     }
 }
