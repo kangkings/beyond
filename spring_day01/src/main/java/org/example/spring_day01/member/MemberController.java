@@ -1,6 +1,8 @@
 package org.example.spring_day01.member;
 
+import org.example.spring_day01.member.model.MemberLoginReq;
 import org.example.spring_day01.member.model.MemberSignupReq;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,5 +29,15 @@ public class MemberController {
         System.out.println(memberSignupReq.toString());
         String res = memberService.method01();
         return "test";
+    }
+
+    @PostMapping(value = "/login")
+    public ResponseEntity<String> login(
+            @RequestBody MemberLoginReq memberLoginReq
+            ){
+
+        String res = memberService.login(memberLoginReq);
+
+        return ResponseEntity.ok(res);
     }
 }
