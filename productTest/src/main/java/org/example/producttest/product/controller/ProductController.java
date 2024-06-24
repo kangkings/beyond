@@ -1,12 +1,12 @@
 package org.example.producttest.product.controller;
 
 import org.example.producttest.product.model.ProductCreateReq;
+import org.example.producttest.product.model.ProductDetailRes;
 import org.example.producttest.product.service.ProductService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
@@ -31,5 +31,20 @@ public class ProductController {
 
         return ResponseEntity.ok(res);
 
+    }
+
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<ProductDetailRes> detailById(
+            @PathVariable(name = "id") Long id
+    ){
+        ProductDetailRes res = productService.detailById(id);
+
+        return ResponseEntity.ok(res);
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<ProductDetailRes>> detailList(){
+        List<ProductDetailRes> res = productService.detailList();
+        return ResponseEntity.ok(res);
     }
 }

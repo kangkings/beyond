@@ -1,23 +1,28 @@
 package org.example.producttest.product.service;
 
-import org.example.producttest.product.model.Product;
-import org.example.producttest.product.model.ProductCreateReq;
-import org.example.producttest.product.model.Seller;
+import org.example.producttest.product.model.*;
 import org.example.producttest.product.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ProductService {
 
     ProductRepository productRepository;
+    SellerRepository sellerRepository;
+    ProductImageRepository productImageRepository;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, SellerRepository sellerRepository, ProductImageRepository productImageRepository) {
         this.productRepository = productRepository;
+        this.sellerRepository = sellerRepository;
+        this.productImageRepository = productImageRepository;
     }
-
 
     public String create(ProductCreateReq req) {
         Product p = new Product();
+        ProductImage pImg = new ProductImage();
         p.setProductName(req.getProductName());
         p.setProductPrice(req.getProductPrice());
         p.setDeliveryPrice(req.getDeliveryPrice());
@@ -25,7 +30,41 @@ public class ProductService {
         p.setOutboundDays(req.getOutboundDays());
         p.setSeller(new Seller(1L,"test01@gmail.com","test01","01012345678",null));
         productRepository.save(p);
+        pImg.setImageUrl("image_"+p.getId()+".jpeg");
+        pImg.setProduct(p);
+        productImageRepository.save(pImg);
 
         return "성공";
+    }
+
+    public ProductDetailRes detailById(Long id) {
+        Product product = productRepository.findById(id).get();
+        ProductDetailRes res = new ProductDetailRes();
+        res.setId(product.getId());
+        res.setAddDeliveryPrice(product.getAddDeliveryPrice());
+        res.setProductName(product.getProductName());
+        res.setSellerName(product.getSeller().getName());
+        res.setDeliveryPrice(product.getDeliveryPrice());
+        res.setOutboundDays(product.getOutboundDays());
+        res.setImageURL(product.getProductImage().getImageUrl());
+
+        return res;
+    }
+
+    public List<ProductDetailRes> detailList() {
+        List<Product> product = productRepository.findAll();
+        List<ProductDetailRes> res = new ArrayList<>();
+        for (Product p : product){
+            ProductDetailRes pRes = new ProductDetailRes();
+            pRes.setId(p.getId());
+            pRes.setAddDeliveryPrice(p.getAddDeliveryPrice());
+            pRes.setDeliveryPrice(p.getDeliveryPrice());
+            pRes.setOutboundDays(p.getOutboundDays());
+            pRes.setProductName(p.getProductName());
+            pRes.setSellerName(p.getSeller().getName());
+            pRes.setImageURL(p.getProductImage().getImageUrl());
+            res.add(pRes);
+        }
+        return res;
     }
 }

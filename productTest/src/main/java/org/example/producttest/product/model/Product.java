@@ -13,7 +13,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idx;
+    private Long id;
 
     @Column
     private String productName;
@@ -30,6 +30,9 @@ public class Product {
 
 
     @ManyToOne
-    @JoinColumn(name = "seller_idx")
+    @JoinColumn(name = "seller_id")
     private Seller seller;
+
+    @OneToOne(mappedBy = "product")
+    private ProductImage productImage;
 }
