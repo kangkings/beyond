@@ -5,10 +5,10 @@ import lombok.*;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class Product {
 
     @Id
@@ -35,4 +35,16 @@ public class Product {
 
     @OneToOne(mappedBy = "product")
     private ProductImage productImage;
+
+    public ProductDetailRes toDto(Product product) {
+        return ProductDetailRes.builder()
+                .id(this.id)
+                .productName(this.getProductName())
+                .deliveryPrice(this.deliveryPrice)
+                .addDeliveryPrice(this.addDeliveryPrice)
+                .outboundDays(this.outboundDays)
+                .sellerName(this.getSeller().getName())
+                .imageUrl(this.productImage.getImageUrl())
+                .build();
+    }
 }

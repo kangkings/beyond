@@ -6,16 +6,23 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.StandardProtocolFamily;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
-@Service
+//@Service
 public class LocalFileUploadService implements FileUploadService{
 
     //설정파일에서 값 가져와서 세팅
     @Value("${project.upload.path}")
     private String uploadPath;
+
+    @Override
+    public String upload(MultipartFile file) {
+        return saveFile(file);
+    }
+
     public String makeFolder() {
 
         String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));

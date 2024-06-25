@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

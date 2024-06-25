@@ -6,10 +6,10 @@ import lombok.*;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class ProductImage {
 
     @Id
@@ -22,4 +22,5 @@ public class ProductImage {
     @OneToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
 }

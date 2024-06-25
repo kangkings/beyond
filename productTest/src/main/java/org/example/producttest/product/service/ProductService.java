@@ -20,17 +20,26 @@ public class ProductService {
     }
 
     public String create(ProductCreateReq req, String name) {
-        Product p = new Product();
-        ProductImage pImg = new ProductImage();
-        p.setProductName(req.getProductName());
-        p.setProductPrice(req.getProductPrice());
-        p.setDeliveryPrice(req.getDeliveryPrice());
-        p.setAddDeliveryPrice(req.getAddDeliveryPrice());
-        p.setOutboundDays(req.getOutboundDays());
-        p.setSeller(new Seller(1L,"test01@gmail.com","test01","01012345678",null));
+        Product p = Product.builder()
+                .productName(req.getProductName())
+                .productPrice(req.getProductPrice())
+                .deliveryPrice(req.getDeliveryPrice())
+                .addDeliveryPrice(req.getAddDeliveryPrice())
+                .outboundDays(req.getOutboundDays())
+                .seller(Seller.builder()
+                        .id(1L)
+                        .products(null)
+                        .email("test01@gmail.com")
+                        .name("test01")
+                        .phone("010123456787")
+                        .build())
+                .build();
+
         productRepository.save(p);
-        pImg.setImageUrl(name);
-        pImg.setProduct(p);
+        ProductImage pImg = ProductImage.builder()
+                .imageUrl(name)
+                .product(p)
+                .build();
         productImageRepository.save(pImg);
 
         return "성공";
@@ -40,15 +49,7 @@ public class ProductService {
 
     public ProductDetailRes detailById(Long id) {
         Product product = productRepository.findById(id).get();
-        ProductDetailRes res = new ProductDetailRes();
-        res.setId(product.getId());
-        res.setAddDeliveryPrice(product.getAddDeliveryPrice());
-        res.setProductName(product.getProductName());
-        res.setSellerName(product.getSeller().getName());
-        res.setDeliveryPrice(product.getDeliveryPrice());
-        res.setOutboundDays(product.getOutboundDays());
-        res.setImageUrl(product.getProductImage().getImageUrl());
-
+        ProductDetailRes res = product.toDto(product);
         return res;
     }
 
@@ -56,14 +57,7 @@ public class ProductService {
         List<Product> product = productRepository.findAll();
         List<ProductDetailRes> res = new ArrayList<>();
         for (Product p : product){
-            ProductDetailRes pRes = new ProductDetailRes();
-            pRes.setId(p.getId());
-            pRes.setAddDeliveryPrice(p.getAddDeliveryPrice());
-            pRes.setDeliveryPrice(p.getDeliveryPrice());
-            pRes.setOutboundDays(p.getOutboundDays());
-            pRes.setProductName(p.getProductName());
-            pRes.setSellerName(p.getSeller().getName());
-            pRes.setImageUrl(p.getProductImage().getImageUrl());
+            ProductDetailRes pRes = p.toDto(p);
             res.add(pRes);
         }
         return res;

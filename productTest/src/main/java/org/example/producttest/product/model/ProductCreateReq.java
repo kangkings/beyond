@@ -3,10 +3,10 @@ package org.example.producttest.product.model;
 import lombok.*;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 public class ProductCreateReq {
 
 private String productName;

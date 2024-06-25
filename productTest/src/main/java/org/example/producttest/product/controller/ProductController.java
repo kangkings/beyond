@@ -30,7 +30,7 @@ public class ProductController {
             ){
         String res = "";
         try {
-            String filename = fileUploadService.saveFile(file);
+            String filename = fileUploadService.upload(file);
             res = productService.create(dto,filename);
         }catch (Exception e){
             res = "등록 실패";
@@ -40,9 +40,9 @@ public class ProductController {
 
     }
 
-    @GetMapping("/detail/{id}")
+    @GetMapping("/detail?id")
     public ResponseEntity<ProductDetailRes> detailById(
-            @PathVariable(name = "id") Long id
+            Long id
     ){
         ProductDetailRes res = productService.detailById(id);
 
