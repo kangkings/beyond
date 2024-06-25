@@ -15,6 +15,6 @@ public class ProductDetailRes {
     private Integer addDeliveryPrice;
     private Integer outboundDays;
     private String sellerName;
-    private String imageURL;
+    private String imageUrl;
 
 }

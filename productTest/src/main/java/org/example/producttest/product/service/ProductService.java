@@ -3,7 +3,6 @@ package org.example.producttest.product.service;
 import org.example.producttest.product.model.*;
 import org.example.producttest.product.repository.ProductRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class ProductService {
         this.productImageRepository = productImageRepository;
     }
 
-    public String create(ProductCreateReq req) {
+    public String create(ProductCreateReq req, String name) {
         Product p = new Product();
         ProductImage pImg = new ProductImage();
         p.setProductName(req.getProductName());
@@ -30,12 +29,14 @@ public class ProductService {
         p.setOutboundDays(req.getOutboundDays());
         p.setSeller(new Seller(1L,"test01@gmail.com","test01","01012345678",null));
         productRepository.save(p);
-        pImg.setImageUrl("image_"+p.getId()+".jpeg");
+        pImg.setImageUrl(name);
         pImg.setProduct(p);
         productImageRepository.save(pImg);
 
         return "성공";
     }
+
+
 
     public ProductDetailRes detailById(Long id) {
         Product product = productRepository.findById(id).get();
@@ -46,7 +47,7 @@ public class ProductService {
         res.setSellerName(product.getSeller().getName());
         res.setDeliveryPrice(product.getDeliveryPrice());
         res.setOutboundDays(product.getOutboundDays());
-        res.setImageURL(product.getProductImage().getImageUrl());
+        res.setImageUrl(product.getProductImage().getImageUrl());
 
         return res;
     }
@@ -62,7 +63,7 @@ public class ProductService {
             pRes.setOutboundDays(p.getOutboundDays());
             pRes.setProductName(p.getProductName());
             pRes.setSellerName(p.getSeller().getName());
-            pRes.setImageURL(p.getProductImage().getImageUrl());
+            pRes.setImageUrl(p.getProductImage().getImageUrl());
             res.add(pRes);
         }
         return res;

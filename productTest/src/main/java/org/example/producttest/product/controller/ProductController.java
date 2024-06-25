@@ -1,10 +1,13 @@
 package org.example.producttest.product.controller;
 
+import org.example.producttest.file.FileUploadService;
 import org.example.producttest.product.model.ProductCreateReq;
 import org.example.producttest.product.model.ProductDetailRes;
 import org.example.producttest.product.service.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -12,19 +15,23 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    ProductService productService;
+    private final ProductService productService;
+    private final FileUploadService fileUploadService;
 
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService,FileUploadService fileUploadService) {
         this.productService = productService;
+        this.fileUploadService = fileUploadService;
     }
 
     @PostMapping("/create")
     public ResponseEntity<String> create(
-            @RequestBody ProductCreateReq req
+            @RequestPart ProductCreateReq dto,
+            @RequestPart(name = "file") MultipartFile file
             ){
         String res = "";
         try {
-            res = productService.create(req);
+            String filename = fileUploadService.saveFile(file);
+            res = productService.create(dto,filename);
         }catch (Exception e){
             res = "등록 실패";
         }
