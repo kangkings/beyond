@@ -1,4 +1,4 @@
-package org.example.kakao.member;
+package org.example.security01.kakao;
 
 import com.google.gson.Gson;
 import org.springframework.http.HttpEntity;

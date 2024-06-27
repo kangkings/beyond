@@ -6,6 +6,8 @@ import org.example.security01.member.reposiroty.MemberRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class MemberService {
@@ -24,5 +26,15 @@ public class MemberService {
         memberRepository.save(member);
 
         System.out.println("저장 성공");
+    }
+
+    public Member getMemberbyEmail(String nickname) {
+        Optional<Member> res = memberRepository.findByEmail(nickname);
+        if (res.isPresent()){
+            Member member = res.get();
+            return member;
+        }else {
+            return null;
+        }
     }
 }
