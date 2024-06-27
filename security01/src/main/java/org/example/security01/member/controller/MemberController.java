@@ -20,9 +20,9 @@ public class MemberController {
 
     @PostMapping("/signup")
     public ResponseEntity<String> signup(
-            @RequestBody Member member
+            String username, String password
             ){
-        memberService.signup(member);
+        memberService.signup(username, password);
         return ResponseEntity.ok("성공");
     }
 }
