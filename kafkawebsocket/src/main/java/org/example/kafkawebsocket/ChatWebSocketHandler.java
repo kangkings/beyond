@@ -2,6 +2,8 @@ package org.example.kafkawebsocket;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
@@ -12,13 +14,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @RequiredArgsConstructor
+@Component
 public class ChatWebSocketHandler extends TextWebSocketHandler {
-
-    private final Set<WebSocketSession>
 
     //세션들 저장할 변수
     private  final Set<WebSocketSession> sessions = new HashSet<>();
-    private
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     //클라이언트가 연결하면 세션 저장 변수에 클라이언트 세션을 추가
 
@@ -39,12 +40,12 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         for(WebSocketSession s : sessions){
-            kafkaTemplate.send("/chat",message.getPayload());
+            kafkaTemplate.send("chat",message.getPayload());
         }
     }
 
     //메시지를 받으면 다른 사람들에게 메시지를 전송
-    @KafkaListener(topics = "a", groupId = "group_1")
+    @KafkaListener(topics = "chat", groupId = "group_1")
     public void receive(String message) throws IOException {
         for(WebSocketSession s : sessions){
             s.sendMessage(new TextMessage(message));
