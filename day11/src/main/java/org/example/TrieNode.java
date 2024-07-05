@@ -6,12 +6,20 @@ import java.util.Map;
 public class TrieNode {
     private Character data;
     private Map<Character, TrieNode> childNodes;
-    private Boolean isLast;
+    private Integer last;
 
     public TrieNode() {
         data = null;
         this.childNodes = new HashMap<>();
-        isLast = false;
+        last = 0;
+    }
+
+    public Integer getLast() {
+        return last;
+    }
+
+    public void setLast(Integer last) {
+        this.last = last;
     }
 
     public Character getData() {
@@ -30,23 +38,18 @@ public class TrieNode {
         this.childNodes = childNodes;
     }
 
-    public Boolean getLast() {
-        return isLast;
-    }
 
-    public void setLast(Boolean last) {
-        isLast = last;
-    }
+
 
     public TrieNode(Character data) {
         this.data = data;
         this.childNodes = new HashMap<>();
-        isLast = false;
+        last = 0;
     }
 
-    public TrieNode(Character data, Boolean isLast) {
+    public TrieNode(Character data, Integer last) {
         this.data = data;
-        this.isLast = isLast;
+        this.last = last;
         this.childNodes = new HashMap<>();
     }
 }
