@@ -1,5 +1,6 @@
 package org.example.tddbackend.likes;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.tddbackend.likes.LikesRepository;
 import org.example.tddbackend.likes.model.Likes;
@@ -23,6 +24,7 @@ public class LikesService {
     private final LikesRepository likesRepository;
     private final PostRepository postRepository;
     private final MemberRepository memberRepository;
+    @Transactional
     public String create(LikesCreateReq req) {
         Member member = memberRepository.findById(req.getMemberIdx()).get();
         Post post = postRepository.findById(req.getPostIdx()).get();
@@ -34,11 +36,16 @@ public class LikesService {
                             .member(likes.getMember())
                             .post(likes.getPost())
                     .build());
+
+            post.subLikesCount();
+            postRepository.save(post);
         }else {
             LikesCreateRes res = likesRepository.save(Likes.builder()
                             .member(member)
                             .post(post)
                     .build()).toLikesCreateRes();
+            post.addLikesCount();
+            postRepository.save(post);
             if (res == null){
                 return "좋아요 처리 실패";
             }
