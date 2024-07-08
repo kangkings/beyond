@@ -22,7 +22,6 @@ public class Post {
     private Long idx;
     private String contents;
 
-
     @ManyToOne
     @JoinColumn(name = "member_idx")
     private Member member;
@@ -41,6 +40,17 @@ public class Post {
         return PostReadRes.builder()
                 .idx(idx)
                 .contents(contents)
+                .likesCount(likesList.size())
+                .writer(member.getEmail())
+                .build();
+    }
+
+    public PostReadRes toPostReadRes(Integer count){
+        return PostReadRes.builder()
+                .idx(idx)
+                .contents(contents)
+                .likesCount(count)
+                .writer(member.getEmail())
                 .build();
     }
 }

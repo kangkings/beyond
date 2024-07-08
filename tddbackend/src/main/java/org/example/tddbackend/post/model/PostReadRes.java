@@ -16,4 +16,6 @@ import java.util.List;
 public class PostReadRes {
     private Long idx;
     private String contents;
+    private Integer likesCount;
+    private String writer;
 }
