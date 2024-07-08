@@ -24,17 +24,19 @@ public class PostService {
     public PostReadRes read(Long idx) {
 
         Optional<Post> sqlRes = postRepository.findById(idx);
+        Integer count = postRepository.findByIdWithCount(idx);
         if (sqlRes.isEmpty()){
             return null;
         }
-        return sqlRes.get().toPostReadRes();
+        return sqlRes.get().toPostReadRes(count);
     }
 
     public List<PostReadRes> readAll(){
         List<Post> sqlRes = postRepository.findAll();
         List<PostReadRes> res = new ArrayList<>();
-        for (Post m : sqlRes){
-            res.add(m.toPostReadRes());
+        for (Post p : sqlRes){
+            Integer count = postRepository.findByIdWithCount(p.getIdx());
+            res.add(p.toPostReadRes(count));
         }
 
         return res;

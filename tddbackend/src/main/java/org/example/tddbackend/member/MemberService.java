@@ -17,6 +17,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
     public MemberCreateRes create(MemberCreateReq req) {
         MemberCreateRes res = memberRepository.save(req.toMember(bCryptPasswordEncoder.encode(req.getPassword()))).toMemberCreateRes();
         return res;
@@ -32,12 +33,15 @@ public class MemberService {
     }
 
     public List<MemberReadRes> readAll(){
+        //시작시간 측정코드 삽입
+
         List<Member> sqlRes = memberRepository.findAll();
         List<MemberReadRes> res = new ArrayList<>();
         for (Member m : sqlRes){
             res.add(m.toMemberReadRes());
         }
 
+        //종료시간 또는 경과시간 측정코드 삽입
         return res;
     }
 
