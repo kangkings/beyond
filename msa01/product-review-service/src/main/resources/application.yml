@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://192.168.0.249:10011/msa_product_review
+    username: kts
+    password: qwer1234
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
+
+project:
+  upload:
+    path: c:\upload
+
+server:
+  port: 8084
