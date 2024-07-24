@@ -1,0 +1,1805 @@
+@use '@ssgui/icons/dist/ssgui-icons' as *;
+// MYSSG 개편(s)
+// LAYOUT
+.body_wide_ctn #container.cmmyssg_wrap {
+  width: 1280px;
+  // 삭제예정(s)
+  .content_myssg {
+    float: none;
+    width: auto;
+    min-height: auto;
+    padding-left: 0;
+    background: none;
+  }
+  // 삭제예정(e)
+  .content_myssg {
+    position: relative;
+    float: left;
+    width: 1020px;
+    margin: 0 0 0 40px;
+
+    .universe_grade {
+      margin: 23px 0 40px;
+    }
+
+    .universe_banner {
+      margin-bottom: 30px;
+    }
+  }
+  .new01 {
+    .cmem_sec.mom_sec {
+      padding-top: 0;
+      .cmem_msg_head {
+        border-bottom: 0;
+      }
+    }
+    .cmem_term_inner {
+      margin-left: 0;
+    }
+    .cmem_terms .cmem_term_tit {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .cmem_sec_cont {
+      border-bottom: 0;
+    }
+    .cmem_term_box .cmem_btn {
+      background: none;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .cmem_term_box .cmem_btn:after {
+      width: 20px;
+      height: 20px;
+      background: url(#{$imgPath}/myssg/ico_chevron_right.png) no-repeat;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 6px;
+    }
+    .cmem_btnarea.mombtn {
+      margin-top: 47px;
+      .cmem_btn {
+        background: #181818;
+        color: #fff;
+        border-radius: 8px;
+        height: 52px;
+        font-size: 15px;
+      }
+    }
+    .cmem_msg_head.omnitit {
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 0;
+      padding-top: 50px;
+    }
+  }
+  .cmmyssg_wrap a {
+    text-decoration: none;
+  }
+  .cmmyssg_tx_point {
+    color: #ff3e3e;
+  }
+  .cmmyssg_tx_gray {
+    color: #666;
+  }
+}
+
+.cmmyssg_wrap a {
+  text-decoration: none;
+}
+
+.body_wide_ctn #container.cmmyssg_wrap .content_myssg.new01 {
+  margin: 0 0 0 60px;
+}
+
+// HEADER
+.cmmyssg_header {
+  display: flex;
+  width: 1280px;
+  margin: 40px 0;
+  border-radius: 8px;
+  background: #fafafa;
+
+  &.v2 {
+    min-height: 275px;
+    margin: 40px 0 20px;
+
+    .cmmyssg_user {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px;
+
+      .cmmyssg_asset_btns {
+        display: none;
+      }
+    }
+
+    .cmmyssg_user_grade {
+      margin-right: 15px;
+    }
+
+    .cmmyssg_user_gradelink {
+      width: 50px;
+      height: 50px;
+
+      > .cmmyssg_user_gradeic {
+        transform-origin: 0 0;
+        transform: scale(0.5);
+      }
+    }
+
+    .cmmyssg_user_btnarea {
+      margin-top: 3px;
+    }
+
+    .cmmyssg_user_btn {
+      width: auto;
+      height: auto;
+      padding: 0;
+      background: none;
+      border: none;
+      font-size: 15px;
+      font-family: $fontM;
+      color: #222;
+      line-height: calc(19 / 15);
+      letter-spacing: 0;
+
+      .icon:after {
+        background-image: url(#{$imgPath}/myssg/icon_chevron_right_sm.svg);
+      }
+    }
+
+    .cmmyssg_user_info + .cmmyssg_user_guidetx {
+      width: 100%;
+      flex: none;
+      margin-top: 0;
+    }
+
+    .cmmyssg_asset {
+      width: 295px;
+    }
+
+    .cmmyssg_asset_user_btn {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      background-color: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #000;
+      letter-spacing: -0.3px;
+
+      + .cmmyssg_asset_user_btn {
+        margin-top: 0;
+      }
+    }
+
+    .cmmyssg_user_guidetx {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #666;
+
+      .cmmyssg_tooltipwrap {
+        line-height: 0;
+      }
+
+      .icon_imark_circle {
+        &:after {
+          width: 16px;
+          height: 16px;
+          margin-top: -2px;
+        }
+      }
+    }
+
+    .cmmyssg_asset_btns {
+      margin-top: 10px;
+
+      > .cmmyssg_msgwrap {
+        display: flex;
+        align-items: center;
+        margin: 0 -2.5px;
+      }
+
+      .cmmyssg_btn_wrap {
+        flex: 1;
+        padding: 0 2.5px;
+        box-sizing: border-box;
+
+        .cmmyssg_asset_btn {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+
+      .cmmyssg_msgwrap.on .cmmyssg_asset_btn {
+        &:after {
+          width: 5px;
+          height: 5px;
+          box-sizing: border-box;
+          bottom: -8px;
+          z-index: 1;
+          background-color: #fff;
+          border: 1px solid transparent;
+          border-right-color: #222;
+          border-bottom-color: #222;
+          transform: rotate(-135deg);
+        }
+      }
+
+      .cmmyssg_msgwrap.on:has(.cmmyssg_btn_point) {
+        .cmmyssg_btn_charge,
+        .cmmyssg_btn_transform,
+        .cmmyssg_btn_point {
+          &:after {
+            content: none;
+          }
+        }
+      }
+
+      .cmmyssg_msgwrap.on .cmmyssg_btn_charge {
+        &:after {
+          content: none;
+        }
+      }
+
+      .cmmyssg_btn_charge {
+        background-color: #ff3e3e;
+        border-color: #ff3e3e;
+        color: #fff;
+      }
+
+      .cmmyssg_btn_transform {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+      }
+
+      .cmmyssg_btn_point {
+        background-color: #666;
+        border-color: #666;
+        color: #fff;
+      }
+    }
+
+    .cmmyssg_msg {
+      background-color: #fff;
+      border: 1px solid #222;
+      color: #222;
+    }
+
+    .cmmyssg_user_slide_container {
+      width: 100%;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .cmmyssg_user_noticetx {
+      background-color: #e5e5e5;
+      border-radius: 4px;
+
+      > a {
+        width: 100%;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 8px 0 15px;
+        box-sizing: border-box;
+      }
+
+      p {
+        flex: 1;
+        margin-right: 6px;
+        font-size: 13px;
+        color: #222;
+        line-height: calc(20 / 13);
+        letter-spacing: -0.5px;
+
+        > span {
+          display: block;
+          font-family: $fontM;
+        }
+      }
+
+      .icon {
+        flex: none;
+
+        &:after {
+          background-image: url('#{$imgPath}/myssg/icon_chevron_right_sm.svg');
+        }
+      }
+    }
+
+    .cmmyssg_btn_month_coupon_download {
+      width: auto;
+      height: 24px;
+      display: block;
+      padding: 0 8px;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      background-color: #222;
+      font-family: $fontM;
+      font-size: 12px;
+      color: #fff;
+      line-height: calc(14 / 12);
+    }
+  }
+
+  // 신세계 유니버스 가입자인 경우
+  &.universe {
+    .cmmyssg_user {
+      background: image-set(
+          url('../img/myssg/bg_universe.png') 1x,
+          url('../img/myssg/bg_universe@2x.png') 2x
+        )
+        no-repeat center / cover;
+      border-radius: 8px 0 0 8px;
+
+      .cmmyssg_user_tit,
+      .cmmyssg_user_btn,
+      .cmmyssg_user_guidetx {
+        color: #fff;
+      }
+
+      .cmmyssg_user_btn {
+        .icon:after {
+          content: '';
+          @include ssgui-svg-icon($name: $IconSsgChevronRightSmall, $size: 'sm', $color: #ffffff);
+        }
+      }
+
+      .cmmyssg_user_guidetx {
+        .icon_imark_circle {
+          &:after {
+            content: '';
+            @include ssgui-svg-icon($name: $IconSsgCircleInformation, $size: 'xs', $color: #ffffff);
+            filter: none;
+          }
+        }
+      }
+
+      .cmmyssg_asset_btns {
+        width: 100%;
+        display: block;
+        margin-top: 60px;
+
+        .cmmyssg_msgwrap {
+          margin: 0 -2px;
+        }
+
+        .cmmyssg_btn_wrap {
+          padding: 0 2px;
+        }
+
+        .cmmyssg_asset_btn {
+          font-family: $fontM;
+          background-color: #5c73b4;
+          border-color: #5c73b4;
+          color: #fff;
+        }
+
+        + .cmmyssg_user_guidetx {
+          margin-top: 20px;
+        }
+      }
+
+      @at-root {
+        .body_wide_ctn #container.cmmyssg_wrap .cmmyssg_header.universe .cmmyssg_tx_point {
+          font-family: $fontB;
+          color: inherit;
+        }
+      }
+    }
+
+    .cmmyssg_btn_month_coupon_download {
+      background-color: #5c73b4;
+      border-color: #5c73b4;
+      color: #fff;
+    }
+  }
+}
+.cmmyssg_user {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 30px 10px 30px 30px;
+  position: relative;
+  box-sizing: border-box;
+
+  &_grade {
+    margin-right: 30px;
+  }
+  &_gradelink {
+    display: block;
+  }
+  &_gradeic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: url(#{$imgPath}/myssg/sp_myssg_grade.png);
+  }
+  &_gradeic.ty_family {
+    background-position: 0 0;
+  }
+  &_gradeic.ty_bronze {
+    background-position: -110px 0;
+  }
+  &_gradeic.ty_silver {
+    background-position: -220px 0;
+  }
+  &_gradeic.ty_gold {
+    background-position: 0 -110px;
+  }
+  &_gradeic.ty_vip {
+    background-position: -110px -110px;
+  }
+  &_gradeic.ty_friends {
+    background-image: url(#{$imgPath}/myssg/img_myssg_grade_friends.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    &_gradeic {
+      background-image: url(#{$imgPath}/myssg/sp_myssg_grade@2x.png);
+      background-size: 320px auto;
+    }
+  }
+  &_gradetx {
+    margin-top: 15px;
+    font-family: $fontM;
+    font-size: 15px;
+    line-height: 19px;
+    color: #222;
+    text-align: center;
+  }
+
+  &_tit {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 28px;
+    letter-spacing: -0.7px;
+    color: #222;
+    a {
+      color: inherit;
+    }
+  }
+  &_titname {
+    display: inline-block;
+    font-family: $fontB;
+    transform: rotate(-0.028deg);
+    vertical-align: top;
+  }
+  &_progress {
+    position: relative;
+    width: 300px;
+    height: 4px;
+    margin-top: 15px;
+    padding: 2px 0;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: #e5e5e5;
+      transform: translateY(-50%);
+      content: '';
+    }
+  }
+  &_progressbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    height: 100%;
+    border-radius: 2px;
+    background: #222;
+  }
+  &_progressbar:after {
+    width: 8px;
+    height: 8px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    background: #222;
+    content: '';
+  }
+  &_guide {
+    margin-top: 15px;
+  }
+  &_guidetx {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #444;
+    .cmmyssg_tx_point {
+      font-family: $fontM;
+    }
+    .icon_imark_circle::after {
+      filter: invert(21%) sepia(8%) saturate(0%) hue-rotate(192deg) brightness(95%) contrast(79%);
+    }
+  }
+  &_btnarea {
+    display: flex;
+    margin-top: 15px;
+    .cmmyssg_user_btnitem {
+      margin-left: 5px;
+    }
+    .cmmyssg_user_btnitem:first-child {
+      margin-left: 0;
+    }
+  }
+  &_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 128px;
+    height: 30px;
+    padding: 7px 15px 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background: #fff;
+    box-sizing: border-box;
+    font-family: $fontR;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #000;
+    white-space: nowrap;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+
+  .cmmyssg_user_info_wrap {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    ~ .cmmyssg_user_guidetx {
+      margin-top: auto;
+
+      + .cmmyssg_user_guidetx {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+.cmmyssg_asset {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 257px;
+  padding: 30px;
+  border-left: 2px solid #fff;
+  box-sizing: border-box;
+  &_tit {
+    .cmmyssg_tooltipwrap {
+      margin-top: 1px;
+    }
+  }
+  &_tittx {
+    font-family: $fontM;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: #222;
+    vertical-align: top;
+  }
+  &_cont {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+  &_value {
+    white-space: nowrap;
+  }
+  &_valuenum {
+    font-family: $fontB;
+    font-size: 24px;
+    line-height: 30px;
+    color: #222;
+  }
+  &_valuetx {
+    margin: 0 0 2px 5px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #222;
+  }
+  &_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70px;
+    height: 30px;
+    margin-left: 8px;
+    padding: 7px 0 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background: #fff;
+    box-sizing: border-box;
+    font-family: $fontR;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #000;
+    white-space: nowrap;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  &_fullbtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    padding: 7px 0 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background: #fff;
+    box-sizing: border-box;
+    font-family: $fontR;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #000;
+    white-space: nowrap;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  .cmmyssg_msgwrap {
+    position: relative;
+    &.on {
+      .cmmyssg_asset_btn:after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #222;
+        transform: translateX(-50%);
+      }
+      .cmmyssg_msg {
+        display: block;
+      }
+    }
+  }
+  .cmmyssg_msg {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    opacity: 0.98;
+    min-width: 193px;
+    margin-top: 5px;
+    padding: 9px 33px 8px 12px;
+    border-radius: 4px;
+    background: #222;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    font-family: $fontM;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.3px;
+    color: #fff;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    &_close {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      i.icon {
+        vertical-align: top;
+      }
+    }
+  }
+  &_detail {
+    margin-top: 39px;
+  }
+  &_row {
+    display: flex;
+    margin-top: 8px;
+    white-space: nowrap;
+  }
+  &_row:first-child {
+    margin-top: 0;
+  }
+  &_subtit {
+    margin-right: 30px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.3px;
+    color: #444;
+  }
+  &_subtx {
+    display: flex;
+    overflow: hidden;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.3px;
+    color: #444;
+  }
+  &_subtx .cmmyssg_ellipsis {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &_subtx .cmmyssg_icon_rightArrow {
+    @include ssgui-svg-icon($name: $IconSsgChevronRightMedium);
+    width: 12px;
+    height: 12px;
+    margin-left: 2px;
+    margin-top: 1px;
+    align-self: flex-start;
+  }
+}
+.cmmyssg_header.ty_light {
+  .cmmyssg_user {
+    height: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .cmmyssg_user_grade {
+    margin-right: 15px;
+  }
+  .cmmyssg_user_gradelink {
+    width: 50px;
+    height: 50px;
+  }
+  .cmmyssg_user_gradeic {
+    transform-origin: 0 0;
+    transform: scale(0.5);
+  }
+  .cmmyssg_user_info {
+    flex: 0 1 auto;
+  }
+  .cmmyssg_user_btnarea {
+    margin: 0 0 0 15px;
+  }
+  .cmmyssg_asset {
+    justify-content: center;
+    position: relative;
+    width: auto;
+    border-left: 1px solid transparent;
+  }
+  .cmmyssg_asset:after {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    width: 1px;
+    height: 18px;
+    background: #e5e5e5;
+    transform: translateY(-50%);
+    content: '';
+  }
+  .cmmyssg_user + .cmmyssg_asset:after {
+    display: none;
+  }
+  .cmmyssg_asset_tit {
+    display: flex;
+    align-items: center;
+  }
+  .cmmyssg_asset_tit:after {
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    background: url(#{$imgPath}/myssg/ico_chevron_right.png) no-repeat;
+    content: '';
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url(#{$imgPath}/myssg/ico_chevron_right@2x.png);
+      background-size: 20px auto;
+    }
+  }
+  .cmmyssg_asset_tittx {
+    padding-top: 1px;
+  }
+}
+
+// ASIDE
+.cmmyssg_aside {
+  float: left;
+  width: 200px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.cmmyssg_snb {
+  padding: 10px 0;
+  &_item {
+    margin: 0 30px;
+    padding: 20px 0;
+    position: relative;
+    border-top: 1px solid #e5e5e5;
+
+    .cmmyssg_headbubble {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      z-index: 20;
+    }
+  }
+  &_item:first-child {
+    border-top: 0;
+  }
+  &_tit {
+    display: block;
+    font-family: $fontB;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: #000;
+    transform: rotate(-0.028deg);
+  }
+  &_subitem {
+    margin-top: 15px;
+    a {
+      display: block;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: -0.3px;
+      color: #777;
+      white-space: nowrap;
+    }
+  }
+}
+.cmmyssg_quick {
+  &_item {
+    border-top: 1px solid #e5e5e5;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 12px 30px;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: -0.3px;
+      color: #000;
+    }
+  }
+  i.icon {
+    margin-right: 5px;
+  }
+}
+
+// TOOLTIP
+.cmmyssg_tooltipwrap {
+  display: inline-block;
+  position: relative;
+  line-height: 16px;
+  vertical-align: top;
+}
+.cmmyssg_tooltip_open {
+  i.icon {
+    vertical-align: top;
+  }
+}
+.cmmyssg_tooltip {
+  display: none;
+  position: absolute;
+  z-index: 410;
+  width: 588px;
+  margin-top: 5px;
+  padding: 29px;
+  border: 1px solid #222;
+  background: #fff;
+  font-family: $fontR;
+  word-break: break-all;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  &_head {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 13px;
+    border-bottom: 3px solid #222;
+  }
+  &_tit {
+    display: inline-block;
+    padding-top: 2px;
+    font-family: $fontM;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: #000;
+    vertical-align: top;
+    transform: rotate(-0.028deg);
+  }
+  &_close {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 28px;
+    height: 28px;
+  }
+  &_tx {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.3px;
+    color: #000;
+  }
+  &_lst {
+    li {
+      position: relative;
+      margin-top: 20px;
+      padding-left: 14px;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: -0.3px;
+      color: #000;
+    }
+    li:first-child {
+      margin-top: 0;
+    }
+    li:after {
+      position: absolute;
+      top: 13px;
+      left: 4px;
+      width: 2px;
+      height: 2px;
+      background: #000;
+      content: '';
+    }
+  }
+  &_dl {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 30px);
+    margin: -10px 0 0 -30px;
+    dt,
+    dd {
+      flex-basis: 50%;
+      flex-grow: 0;
+      max-width: 50%;
+      padding: 10px 0 0 30px;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: -0.3px;
+      color: #666;
+      box-sizing: border-box;
+    }
+    dd {
+      text-align: right;
+    }
+    &.ty_total {
+      dt,
+      dd {
+        font-family: $fontM;
+        color: #222;
+      }
+    }
+  }
+  &_hr {
+    display: block;
+    flex-shrink: 0;
+    margin: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  &_conttit {
+    display: block;
+    margin-top: 10px;
+    font-family: $fontM;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 28px;
+    letter-spacing: -0.3px;
+    color: #000;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &_contbox {
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &_conttx {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.3px;
+    color: #222;
+  }
+  &_contdesc {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: #666;
+  }
+  &_contlst {
+    li {
+      position: relative;
+      padding-left: 13px;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: -0.3px;
+      color: #222;
+    }
+    li:after {
+      position: absolute;
+      top: 13px;
+      left: 4px;
+      width: 2px;
+      height: 2px;
+      background: #222;
+      content: '';
+    }
+  }
+}
+
+.cmmyssg_headbubble {
+  &:before {
+    content: '';
+    border-style: solid;
+    position: absolute;
+  }
+
+  // http://apps.eky.hk/css-triangle-generator/ 참고
+
+  &.placement-top-left {
+    &:before {
+      top: -5px;
+      left: 23px;
+      border-width: 0 6px 7px 6px;
+      border-color: transparent transparent #ffd000 transparent;
+    }
+  }
+
+  &.placement-bottom-left {
+    &:before {
+      bottom: -5px;
+      left: 23px;
+      border-width: 7px 6px 0 6px;
+      border-color: #ffd000 transparent transparent transparent;
+    }
+  }
+
+  &.placement-left {
+    &:before {
+      top: 50%;
+      left: -5px;
+      transform: translateY(-50%);
+      border-width: 6px 7px 6px 0;
+      border-color: transparent #ffd000 transparent transparent;
+    }
+  }
+
+  &.membership {
+    .cmmyssg_headbubble_content {
+      color: #966e46;
+    }
+  }
+
+  &_content {
+    min-height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    box-sizing: border-box;
+    background: #ffd040;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    font-family: $fontM;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    color: #222;
+    white-space: nowrap;
+  }
+}
+
+.cmmyssg_membership_banner {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 40px;
+  background-color: #a78353;
+  border-radius: 8px;
+
+  .cmmyssg_membership_banner_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .cmmyssg_membership_banner_append {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 30px;
+    box-sizing: border-box;
+  }
+
+  .cmmyssg_membership_info {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    box-sizing: border-box;
+    position: relative;
+
+    > a {
+      display: block;
+    }
+
+    .cmmyssg_membership_headbubble {
+      padding: 9px 12px 8px;
+      position: absolute;
+      left: 114px;
+      top: 37px;
+      border-radius: 4px;
+      background: #ffd040;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+
+      > p {
+        font-family: $fontM;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -0.3px;
+        color: #966e46;
+        white-space: nowrap;
+      }
+
+      &:after {
+        position: absolute;
+        top: -10px;
+        left: 24px;
+        content: '';
+        border: 5px solid transparent;
+        border-bottom-color: #ffd040;
+      }
+    }
+
+    .cmmyssg_headbubble {
+      position: absolute;
+      left: 114px;
+      top: 36px;
+    }
+  }
+
+  .cmmyssg_banner_title {
+    display: flex;
+    align-items: flex-end;
+    font-size: 18px;
+    font-family: $fontB;
+    color: #fff;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+
+    .badge {
+      margin-right: 8px;
+
+      &:after {
+        content: '';
+        width: 76px;
+        height: 28px;
+        display: block;
+        background: url(#{$imgPath}/myssg/smile-club-simple-logo-roundsquare@2x.png) no-repeat
+          center / 100% auto;
+      }
+    }
+
+    > span {
+      display: block;
+    }
+
+    .icon {
+      &:after {
+        background-image: url(#{$imgPath}/myssg/icon_chevron_right_sm.svg);
+        filter: invert(100%) sepia(88%) saturate(0%) hue-rotate(315deg) brightness(114%)
+          contrast(100%);
+      }
+    }
+  }
+
+  .cmmyssg_banner_text {
+    display: inline-block;
+    font-size: 13px;
+    line-height: calc(16 / 13);
+    letter-spacing: -0.16px;
+  }
+
+  .cmmyssg_banner_point_text {
+    color: #ffcf02;
+  }
+
+  .cmmyssg_banner_marker_text {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-family: $fontM;
+    font-size: 14px;
+    color: #fff;
+    line-height: calc(17 / 14);
+    letter-spacing: -0.3px;
+
+    .icon_checkmark_circle {
+      margin-right: 2px;
+      filter: invert(96%) sepia(100%) saturate(12%) hue-rotate(237deg) brightness(103%)
+        contrast(103%);
+    }
+  }
+
+  .cmmyssg_membership_benefit_list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+
+  .cmmyssg_membership_benefit {
+    display: flex;
+    align-items: flex-end;
+
+    > a {
+      display: inline-flex;
+      align-items: flex-end;
+      font-family: $fontM;
+      font-size: 14px;
+      color: #fff;
+      line-height: calc(18 / 14);
+      letter-spacing: -0.28px;
+
+      > span {
+        display: block;
+        margin-left: 10px;
+      }
+
+      > strong {
+        display: block;
+        margin: 0 5px 0 10px;
+        font-family: $fontB;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+    }
+
+    .cmmyssg_tooltipwrap,
+    .cmmyssg_tooltip_open {
+      line-height: 1;
+    }
+
+    .cmmyssg_tooltipwrap {
+      margin-left: 5px;
+    }
+
+    .cmmyssg_tootip_open {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(63deg) brightness(105%)
+        contrast(102%);
+    }
+
+    + .cmmyssg_membership_benefit {
+      > a:before {
+        content: '';
+        align-self: center;
+        width: 1px;
+        height: 17px;
+        display: inline-block;
+        margin: 0 12px;
+        background-color: #fff;
+        opacity: 0.2;
+      }
+    }
+  }
+
+  .cmmyssg_membership_btn_list {
+    display: flex;
+    align-items: center;
+
+    .cmmyssg_membership_btn {
+      width: 170px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #966e46;
+      line-height: calc(15 / 13);
+      letter-spacing: -0.3px;
+
+      &:first-child {
+        background-color: #966e46;
+        color: #fff;
+      }
+
+      + .cmmyssg_membership_btn {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &.cmmyssg_membership_before_join {
+    .cmmyssg_membership_banner_content {
+      position: relative;
+
+      > a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .cmmyssg_membership_info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .cmmyssg_banner_subtitle {
+      display: flex;
+      align-items: center;
+
+      .badge {
+        margin-right: 3px;
+
+        &:after {
+          content: '';
+          width: 55px;
+          height: 24px;
+          display: block;
+          background: url(#{$imgPath}/myssg/smile-club-simple-logo-roundsquare_sm@2x.png) no-repeat
+            center / 100% auto;
+        }
+      }
+    }
+
+    .cmmyssg_banner_title {
+      margin-top: 7px;
+
+      font-family: $fontM;
+      font-size: 19px;
+      line-height: calc(23 / 19);
+      letter-spacing: -0.5px;
+    }
+
+    .cmmyssg_membership_benefit_img {
+      width: 226px;
+      margin-left: 45px;
+      line-height: 0;
+
+      > img {
+        width: 100%;
+      }
+    }
+
+    .cmmyssg_membership_btn_list {
+      margin: 0 30px 0 50px;
+    }
+
+    .cmmyssg_membership_btn {
+      width: 240px;
+      height: 44px;
+      border-radius: 6px;
+      font-size: 14px;
+      line-height: calc(17 / 14);
+    }
+  }
+
+  // MYSSG - 쿠폰
+  &.membership_banner_coupon {
+    height: 60px;
+    .cmmyssg_membership_btn_list .cmmyssg_membership_btn {
+      width: 180px;
+      background-color: #fff;
+      color: #966e46;
+    }
+  }
+  &.membership_banner_coupon.v2 {
+    height: 80px;
+    margin-bottom: 0;
+    .cmmyssg_banner_title {
+      font-size: 17px;
+      line-height: 24px;
+      .badge:after {
+        background-image: url("data:image/svg+xml, %3Csvg width='84' height='32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M43.334 13.169a5.045 5.045 0 00-3.21-1.287c-2.535 0-4.37 2.161-4.37 4.849 0 2.819 1.55 4.852 4.348 4.852a4.776 4.776 0 003.21-1.333l2.012 2.531a8.621 8.621 0 01-5.375 1.86c-4.61 0-7.949-3.3-7.949-7.91 0-4.458 3.626-7.91 8.105-7.91 1.856 0 3.32.59 4.938 1.618l-1.71 2.73zm7.337-5.176h-3.54V24.38h3.54V7.993zm10.615 16.384l-.305-1.507a4.406 4.406 0 01-3.584 1.77 3.995 3.995 0 01-3.014-1.55c-.963-1.223-1.049-2.712-1.049-4.35v-6.072h3.538v5.94c0 .767 0 1.66.263 2.253a1.422 1.422 0 001.4.807 2.629 2.629 0 002.183-1.223v-7.777h3.54v11.71h-2.971zm5.721-16.384h3.537v5.766c.853-1.027 2.296-1.354 3.342-1.354 3.018 0 5.31 2.776 5.31 6.16 0 3.385-2.292 6.075-5.331 6.075-1.156 0-2.795-.373-3.605-1.749l-.281 1.486h-2.972V7.993zm3.537 12.584a3.057 3.057 0 002.47 1.091c1.77 0 2.6-1.681 2.6-3.188 0-1.575-.96-3.104-2.557-3.104a2.824 2.824 0 00-2.513 1.333v3.868z' fill='%23fff'/%3E%3Cpath d='M13 3a13 13 0 100 26 13 13 0 000-26zm0 23.468c-5.005 0-9.126-4.041-9.542-9.172a.893.893 0 01.804-.957A86.898 86.898 0 0113 15.991a86.96 86.96 0 018.741.348.893.893 0 01.798.945c-.416 5.137-4.537 9.172-9.542 9.172' fill='%23FFD200'/%3E%3C/svg%3E");
+      }
+    }
+    .cmmyssg_membership_btn_list .cmmyssg_membership_btn {
+      width: 246px;
+      height: 44px;
+      padding-top: 2px;
+      background-color: #ffd200;
+      color: #966e46;
+      font-family: $fontM;
+      font-weight: bold;
+    }
+  }
+
+  &.universe {
+    height: auto;
+    background-color: transparent;
+
+    .cmmyssg_membership_banner_content {
+      display: block;
+
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}
+// MYSSG - 쿠폰 (멤버십 가입 이력 없음)
+.membership_banner_use_start {
+  width: 100%;
+  margin: 20px 0;
+  background-color: #a78353;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.2;
+  box-sizing: border-box;
+  .badge {
+    margin-bottom: 12px;
+  }
+  .membership_use_tit {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .membership_use_desc {
+    margin-top: 3px;
+    font-size: 14px;
+    color: #fff;
+    em {
+      color: #ffd200;
+    }
+  }
+  .membership_use_link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 32px;
+    margin-top: 10px;
+    background: #ffd200;
+    border-radius: 4px;
+    color: #966e46;
+    font-size: 13px;
+    font-family: $fontM;
+    font-weight: bold;
+  }
+}
+// MYSSG 개편(e)
+
+.universe_grade {
+  display: flex;
+  align-items: center;
+  padding: 0 22px 0 40px;
+  box-sizing: border-box;
+
+  .universe_grade_info {
+    display: flex;
+    align-items: center;
+  }
+
+  .universe_grade_avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 18px;
+    position: relative;
+    background: url('../img/myssg/universeclub_gradient_simbol.svg') no-repeat center / 100% auto;
+
+    .universe_grade_badge {
+      width: 33px;
+      height: 21px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -9px;
+      right: -17px;
+      z-index: 10;
+      background-color: #ff3e3e;
+      border-radius: 20px;
+      font-family: $fontB;
+      font-size: 12px;
+      color: #fff;
+      line-height: calc(14 / 12);
+    }
+  }
+
+  .universe_grade_title {
+    display: block;
+    font-size: 14px;
+    color: #222;
+    line-height: calc(17 / 14);
+    letter-spacing: -0.5px;
+
+    > strong {
+      font-family: $fontB;
+    }
+  }
+
+  .universe_grade_btn_text {
+    display: block;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #222;
+    line-height: calc(17 / 14);
+    letter-spacing: -0.5px;
+
+    .universe_btn_content {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .icon_chevron_right {
+      display: block;
+      margin-top: -1px;
+      line-height: 0;
+
+      &::after {
+        content: '';
+        @include ssgui-svg-icon($name: $IconSsgChevronRightSmall);
+      }
+    }
+  }
+
+  .universe_grade_text_underline {
+    text-decoration: underline;
+  }
+
+  .universe_grade_btn_outline {
+    width: 170px;
+    height: 32px;
+    display: block;
+    margin-left: auto;
+    border: 1px solid #cfcfcf;
+    font-family: $fontM;
+    font-size: 13px;
+    color: #444;
+    line-height: calc(16 / 13);
+
+    .universe_btn_content {
+      width: 100%;
+      height: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon_download {
+      display: block;
+      margin-top: -2px;
+      line-height: 0;
+
+      &:after {
+        content: '';
+        @include ssgui-svg-icon($name: $IconSsgDownload, $size: 'xs', $color: #444);
+      }
+    }
+  }
+}
+
+.universe_banner {
+  width: 100%;
+  height: 60px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  background-color: #dee8fd;
+  border-radius: 8px;
+
+  .universe_banner_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .universe_banner_prepend {
+    width: 68px;
+    height: 32px;
+    margin-right: 12px;
+
+    .universe_logo {
+      width: 68px;
+      height: 32px;
+      display: block;
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: url('../img/myssg/universeclub_gradient_logo_kr.svg') no-repeat center / 100%
+          auto;
+      }
+    }
+  }
+
+  .universe_banner_title {
+    font-family: $fontB;
+    font-size: 18px;
+    color: #002041;
+    line-height: calc(23 / 18);
+    letter-spacing: -0.5px;
+  }
+
+  .universe_banner_actions {
+    margin-left: auto;
+
+    .universe_banner_btn {
+      width: 180px;
+      height: 30px;
+      display: block;
+      background-color: #002041;
+      border-radius: 4px;
+      font-family: $fontB;
+      font-size: 13px;
+      color: #fff;
+      line-height: calc(16 / 13);
+      letter-spacing: -0.5px;
+
+      .universe_btn_content {
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .icon_download {
+    display: block;
+    margin-top: -2px;
+    margin-left: 6px;
+    line-height: 0;
+
+    &:after {
+      content: '';
+      @include ssgui-svg-icon($name: $IconSsgDownload, $size: 'sm', $color: #ffffff);
+    }
+  }
+
+  .icon_chevron_right {
+    display: block;
+    margin-top: -2px;
+    margin-left: 6px;
+    line-height: 0;
+
+    &:after {
+      content: '';
+      @include ssgui-svg-icon($name: $IconSsgChevronRightMedium, $size: 'sm', $color: #ffffff);
+    }
+  }
+}
+
+// ! FIXME
+.myssg_modal_new_v2 {
+  max-width: 320px;
+  min-height: 516px;
+  display: none;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+
+  .myssg_modal_content {
+    > img {
+      max-width: 320px;
+      display: block;
+
+      + .myssg_modal_title {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .myssg_modal_title {
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: $fontB;
+    font-size: 20px;
+    color: #000;
+    line-height: calc(24 / 20);
+
+    ~ .myssg_modal_text {
+      margin-top: 14px;
+    }
+  }
+
+  .myssg_modal_text {
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #777;
+    line-height: calc(18 / 15);
+    word-break: keep-all;
+  }
+
+  .myssg_modal_actions {
+    margin-top: 40px;
+
+    .myssg_modal_btn {
+      width: 100%;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      box-sizing: border-box;
+      background-color: #222;
+      font-family: $fontM;
+      font-size: 15px;
+      color: #fff;
+      line-height: calc(18 / 15);
+    }
+  }
+}
+
+#stampRewardStandard {
+  width: 859px;
+  max-width: none;
+  padding: 30px;
+  box-sizing: border-box;
+
+  .myssg_modal_title {
+    padding-left: 24px;
+    box-sizing: border-box;
+    background: url(../img/event/bg_event_tit.gif) no-repeat 0 8px;
+    font-family: $fontR;
+    font-size: 24px;
+    line-height: calc(29 / 24);
+  }
+
+  .event_stamp_wrap {
+    display: flex;
+    margin: 30px 0 0;
+    padding: 0;
+  }
+
+  .event_stamp_tb {
+    td:first-of-type {
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+
+  .event_stamp_tbbx,
+  .event_stamp_txbx {
+    flex: 1;
+  }
+
+  .stamp_list {
+    display: flex;
+    margin-top: 12px;
+
+    > li {
+      flex: 1;
+
+      img {
+        width: 100%;
+        max-width: none;
+      }
+
+      + li {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .myssg_modal_actions {
+    margin: 30px -30px -30px;
+  }
+}

@@ -1,0 +1,427 @@
+/* skip */
+#skip {
+    position: relative;
+    z-index: 1002;
+  }
+  #skip ul li {
+    display: inline;
+  }
+  #skip h2 {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+    line-height: 0;
+    text-indent: -999em;
+    white-space: nowrap;
+  }
+  #skip a {
+    position: absolute;
+    top: -100px;
+    left: -999px;
+    display: inline-block;
+    border: 1px solid #24242c;
+    background: #31313b;
+    color: white;
+  }
+  #skip a:focus,
+  #skip a:active {
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    zoom: 1;
+    display: inline-block;
+    margin-right: 9px;
+    padding: 5px 8px 4px;
+    background: #31313b;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 1.4em;
+  }
+  
+  .body_wide,
+  .body_wide #wrap,
+  .body_wide .gnb_bnr_wrap {
+    min-width: 1280px;
+  }
+  /* 1280px container */
+  .body_wide_ctn #container,
+  .body_wide_ctn #container_sm,
+  .body_wide_ctn #container_sd {
+    width: 100%;
+    min-width: 1280px;
+  }
+  .body_wide_ctn #content {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .body_wide_ctn .sub_content {
+    width: 1280px;
+  }
+  .body_wide_ctn #sub_contents {
+    width: 1280px;
+  }
+  .body_wide_ctn.body_em .content_ty2 {
+    width: 1280px;
+  }
+  .body_wide_ctn.body_traders #container .sub_wrap {
+    width: 1280px;
+  }
+  .body_wide_ctn.body_traders #container {
+    background-image: none;
+  }
+  // .body_wide_ctn.body_howdy #content {
+  //   width: 100%;
+  // }
+  
+  /* webkit 버그 */
+  /*.bx-wrapper .bx-viewport{-webkit-backface-visibility:hidden;-webkit-transform:scale(1)}*/
+  /* 크롬 bxslider blur 버그 fix */
+  .bx-wrapper .bx-viewport > ul > li,
+  .bx-wrapper .bx-viewport > div > div {
+    backface-visibility: hidden;
+  }
+  
+  /* infinite grid */
+  .grid_container {
+    min-height: 1000px;
+  }
+  .grid_loader {
+    opacity: 0;
+    padding: 40px 0;
+  }
+  .grid_loader.on {
+    opacity: 1;
+  }
+  .grid_loading {
+    height: 60px;
+    background: url(#{$imgPath}/common/loading.gif) no-repeat 50% 50%;
+  }
+  .grid_item .tmpl_noresult {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-family: $fontR;
+    font-weight: 400;
+    line-height: 0.95em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: top;
+    appearance: none;
+    text-decoration: none;
+  }
+  .btn span {
+    display: inline-block;
+    vertical-align: top;
+  }
+  button {
+    overflow: visible;
+    border: 0 none;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  button::-moz-focus-inner,
+  input[type='button']::-moz-focus-inner,
+  input[type='submit']::-moz-focus-inner,
+  input[type='reset']::-moz-focus-inner {
+    padding: 0;
+    border: 0 none;
+  }
+  input.btn,
+  button.btn {
+    overflow: visible;
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* 상품상세 IFRAME */
+  // #_ifr_html {
+  //   height: 1000px;
+  // }
+  // a.read_lock {
+  //   cursor: default;
+  //   cursor: no-drop;
+  //   text-decoration: none !important;
+  // }
+  
+  // .ir {
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+  // a .ir {
+  //   cursor: pointer;
+  // }
+  
+  /* 버튼 */
+  .bn_ar {
+    overflow: hidden;
+    text-align: center;
+    zoom: 1;
+    margin-top: 20px;
+  }
+  .bn_ar.mobile {
+    padding: 0 0 80px 0;
+  }
+  .bn_ar .bn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    min-width: 140px;
+    border: 1px solid #3b3b3b;
+    background-color: #3b3b3b;
+    color: #fff;
+    line-height: 38px;
+    height: 40px;
+    border-radius: 4px;
+    font-family: $fontR;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  .bn_ar .bn:first-child {
+    margin-left: 0;
+  }
+  .bn_ar .bn.btn_login {
+    width: 110px;
+    min-width: 110px;
+    height: 90px;
+    line-height: 90px;
+  }
+  .bn_ar .bn.btn_login_large {
+    width: 110px;
+    min-width: 110px;
+    height: 140px;
+    line-height: 140px;
+  }
+  .bn_ar .bn.xsmall {
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 15px;
+    letter-spacing: -1px;
+  }
+  .bn_ar .bn.small {
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    letter-spacing: -1px;
+  }
+  .bn_ar .bn.medium {
+    width: 190px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    letter-spacing: -1px;
+  }
+  .bn_ar .bn.large {
+    width: 260px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    letter-spacing: -1px;
+  }
+  .bn_ar button.bn {
+    line-height: 38px;
+    cursor: pointer;
+  }
+  .bn_ar button.bn.xsmall {
+    line-height: 31px;
+  }
+  .bn_ar button.bn.small {
+    line-height: 35px;
+  }
+  .bn_ar button.bn.medium,
+  .bn_ar button.bn.large {
+    line-height: 45px;
+  }
+  .bn_ar .bn.color1 {
+    background-color: #3b3b3b;
+    border-color: #3b3b3b;
+    color: #fff;
+  }
+  .bn_ar .bn.color2 {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+    color: #222;
+  }
+  .bn_ar .bn.color3 {
+    background-color: #f14f4f;
+    border-color: #f14f4f;
+  }
+  .bn_ar .bn.txt_ty2 {
+    font-family: $fontR;
+    font-weight: 400;
+  }
+  .login .bn_ar {
+    margin-top: 13px;
+  }
+  .login .bn_ar .btn_login {
+    position: absolute;
+    top: 0;
+    right: 21px;
+  }
+  .nonmember .bn_ar {
+    text-align: center;
+  }
+  .nonmember .section_wrap .bn_ar {
+    margin: 10px 0 0 92px;
+    text-align: left;
+  }
+  .login .bn_ar .bn.xsmall {
+    width: 123px;
+    margin-left: 0;
+  }
+  .member_certification .bn_ar .btn_login {
+    position: absolute;
+    top: 0;
+    right: 0px;
+  }
+  .b2e_member .bn_ar .btn_login_large {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+  }
+  .adult_certify .bn_ar .btn_login {
+    position: absolute;
+    top: 0;
+    right: 0px;
+  }
+  .layer_pop .bn_ar {
+    margin-top: 0;
+    padding-bottom: 30px;
+    text-align: center;
+    zoom: 1;
+  }
+  .login .content_support .bn_ar {
+    margin: 0;
+    text-align: right;
+    padding-top: 0;
+  }
+  .login .content_support .bn_ar .xsmall {
+    color: #666;
+  }
+  .login .content_support .bn_ar .xsmall.color1 {
+    color: #fff;
+  }
+  .please_comment .bn_ar .bn.large,
+  .content_main .section .clip_data_nbox .bn_ar .bn.large {
+    height: 40px;
+    font-size: 17px;
+    line-height: 40px;
+  }
+  
+  // .em.disable {
+  //   color: #ccc;
+  // }
+  // .em.slightest {
+  //   color: #aaa;
+  // }
+  // .em.slightly {
+  //   color: #999;
+  // }
+  // .em.normal {
+  //   color: #666;
+  // }
+  // .em.weighty {
+  //   color: #272727 !important;
+  // }
+  // .em.weightiest {
+  //   color: #e34545;
+  // }
+  // .em.warning {
+  //   color: #e34545;
+  // }
+  // .em.price {
+  //   font-size: 20px;
+  //   color: #e34545;
+  //   line-height: 26px;
+  // }
+  
+  // 플래시 설치 이미지
+  // .ins_player {
+  //   height: 100%;
+  //   cursor: pointer;
+  //   display: block;
+  //   background: url(#{$imgPath}/common/ins_player.svg) #f0f0f2 50% 50% no-repeat;
+  //   background-size: contain;
+  // }
+  // .ins_player a {
+  //   position: relative;
+  //   z-index: 1000;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   opacity: 0;
+  //   filter: alpha(opacity=0);
+  // }
+  
+  // .dimmed_common {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 1000;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: #fff;
+  //   opacity: 0.5;
+  //   filter: alpha(opacity=50);
+  // }
+  // .brand_issue li {
+  //   padding: 37px 21px 20px 21px;
+  //   width: 202px;
+  // }
+  // .brand_issue li:first-child {
+  //   padding-left: 35px;
+  //   padding-right: 22px;
+  // }
+  // .brand_issue li .price_unit del {
+  //   display: block;
+  // }
+  
+  // .price_search .inpbx {
+  //   border: 1px solid #d1d1d1;
+  // }
+  // .price_search .inpbx input {
+  //   padding: 0 !important;
+  // }
+  .mobile_version {
+    width: 1280px;
+    margin: 10px auto 0;
+  }
+  .mobile_version a {
+    display: block;
+    height: 110px;
+    padding-top: 2px;
+    background: #fff;
+    border: 1px solid #c3c3c3;
+    border-radius: 3px;
+    box-shadow: inset 0 -8px 0 0 #f0f0f0;
+    font-weight: bold;
+    font-size: 36px;
+    color: #666;
+    line-height: 110px;
+    text-align: center;
+    text-decoration: none;
+  }
+  

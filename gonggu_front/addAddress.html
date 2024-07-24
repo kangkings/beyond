@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" class="platform__web"><head>
+        <meta name="referrer" content="always">
+        
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8"><!-- 이전엔 utf-8 이였는데 바꿔도 되나? -->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, width=device-width">
+    
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
+    <meta name="format-detection" content="telephone=no">
+    <title>배송지 추가하기</title>
+    <link rel="apple-touch-icon-precomposed" href="https://sslimage.gmarket.co.kr/Gmarket_Mobile_v2/icon_01.png">
+    <link rel="stylesheet" type="text/css" href="//script.gmarket.co.kr/mobile/css/common.css?ver=20200108">
+    <link rel="stylesheet" type="text/css" href="//script.gmarket.co.kr/mobile/css/mypage.css?ver=20200108">
+    <link rel="stylesheet" type="text/css" href="addAddress.css">
+    <link rel="stylesheet" type="text/css" href="addAddress2.css">
+    
+    <script src="https://montelena.gmarket.co.kr/montelenaContainer.js?path=https://mmyg.gmarket.co.kr/ShippingAddress/GetAddressDetail?addrNo=0&amp;deliveryType=Default&amp;returnUrl=https%3A%2F%2Fmmyg.gmarket.co.kr%2FShippingAddress%2FGetAddress%3Ftype%3Ddefault%26isSmileClub%3Dfalse%26closeUrl%3Dhttps%253A%252F%252Fmy.gmarket.co.kr%252Fko%252Fpc%252Fclose-modal%252FShippingAddress&amp;closeUrl=https%3A%2F%2Fmmyg.gmarket.co.kr%2FShippingAddress%2FGetAddress%3Ftype%3Ddefault%26isSmileClub%3Dfalse%26closeUrl%3Dhttps%253A%252F%252Fmy.gmarket.co.kr%252Fko%252Fpc%252Fclose-modal%252FShippingAddress"></script><script src="//script.gmarket.co.kr/mobile/js/common/kr/util/viewability.js"></script><script src="https://script.gmarket.co.kr/js/mobile/main/common/montelena.js"></script><script src="https://script.gmarket.co.kr/js/mobile/main/common/montelena.js"></script><script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/AjaxHelper.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/swipeview.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/front.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/front_v2.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/mobile/js/front_v4.js?v=20160804"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/module/Ajax.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/header/httpAjaxRequest.js?v=20130515"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/viewport.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/util.js?ver=1"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/handlebars-v1.1.2.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/main/common/GMobile.js?v=20160811"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/js/mobile/guidGeneration.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="//script.gmarket.co.kr/gds/gds.css">
+    <link rel="stylesheet" type="text/css" href="//script.gmarket.co.kr/build/mobile/css/gnb/app.css">
+    <script type="text/javascript" src="//script.gmarket.co.kr/gds/gds.js"></script>
+    <script type="text/javascript" src="//script.gmarket.co.kr/fnp/mobile-layout.js"></script>
+    
+        <link rel="stylesheet" href="//script.gmarket.co.kr/mobile/css/common/kr/ui/common.css?ver=20240723161556">
+            <link rel="stylesheet" href="//script.gmarket.co.kr/mobile/css/application/kr/mypage/delivery-address.css?ver=20240723161556">
+    </head>
+    <body class="service__mypage page__new-address page__pcver">
+        
+        
+        <div class="box__layer-dimmed"></div>
+        <!-- WRAPPER -->
+        <div id="wrap">
+            <!-- SKIP NAVI -->
+            <div id="skip-navigation" class="skip-navigation">
+                <strong class="for-a11y">스킵 네비게이션</strong>
+                <ul>
+                    <li><a href="#container" class="link__skip-navigation">본문 바로가기</a></li>
+                </ul>
+            </div>
+            <!-- //SKIP NAVI -->
+            <!-- HEADER -->
+            <div id="header">
+                <div class="box__header box__header--border">
+                    <div class="box__header-inner">
+                        <div class="box__header-content">
+                            <div class="box__header-title">
+                                <h1 class="box__title" data-montelena-acode="200004334"><span class="text">배송지 추가하기</span></h1>
+                            </div>
+                            <div class="box__header-menu">
+                                    <button type="button" id="top_close_btn" class="button__close" data-montelena-acode="200004341" onclick="closeEvent()"><span class="for-a11y">닫기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <iframe id="gmktNewScheme" title="gmktNewScheme" width="0" height="0" style="border: 0; display: none"></iframe>
+            <script>
+                function isGmktApp() {
+                    return navigator.userAgent.indexOf('com.ebay.kr.gmarket') >= 0 ||
+                        navigator.userAgent.indexOf('kr.co.gmarket.GMKTDEV') >= 0 ||
+                        navigator.userAgent.indexOf('kr.co.gmarket.GMKTIP') >= 0 ||
+                        navigator.userAgent.indexOf('kr.co.gmarket.Gmarket-iPad') >= 0;
+                }
+                
+                function closeNewGnb() {
+                    if (!isGmktApp()) {
+                        return;
+                    }
+        
+                    document.getElementById('gmktNewScheme').src = 'gmarket://newWebGnb?type=10';
+                }
+        
+        
+                closeNewGnb();
+            </script>
+            <!--// HEADER -->
+            <hr>
+    
+    
+    
+    
+    <script type="text/javascript" src="/Scripts/Address/AddressDetailEvent.js?ver=20240321"></script>
+    
+    <script type="text/javascript">
+        
+        Handlebars.registerHelper('concat', function () {
+            var outStr = '';
+            for (var arg in arguments) {
+                if (typeof arguments[arg] != 'object') {
+                    outStr += arguments[arg];
+                }
+            }
+            return outStr;
+        });
+    
+        Handlebars.registerHelper('lower', function (str) {
+            return str.toLowerCase();
+        });
+        
+        var isApp = false;
+        var title = '배송지 추가하기';
+        var deliveryRequestPlaceHolder = '최대 50글자까지 자유롭게 수정 가능';
+        var addressData = {"RoadnameInfo1":null,"RoadnameInfo2":null,"AddrNo":null,"GroupId":null,"Name":null,"TelNo":null,"HpNo":null,"NationIsocode":null,"FrontAddress":null,"BackAddress":null,"ZipCode":null,"DeliverySeqNo":null,"GlobalCityNm":null,"GlobalSzNm":null,"SmileboxBranchNo":null,"SmileboxBranchNm":null,"DeliveryNameCode":0,"DeliveryName":null,"DeliveryRequestCode":0,"DeliveryRequest":null,"IsKoreanAddress":false,"IsImpossible":null,"FastShippingAddressInfo":null};
+        var returnUrl = decodeURIComponent(getUrlParams('returnUrl'));
+        var closeUrl = decodeURIComponent(getUrlParams('closeUrl'));
+        var isSimpleBuyer = false;
+        var nationCode = 'KR';
+        var closeType = 'Default';
+        var isSmileFresh = 'N';
+        var removeOverseas = 'N';
+        var isRegionalShipping = '';
+        var deliveryType = 'Default';
+        
+        function getAddressBookType() {
+            return addressBookType;
+        }
+    
+        $(function () {
+            initAddress(0);
+            
+            if (isGlobal()){
+                $(".sp_flag52").css("display", "none");
+                $(".box__add-delivery-info").remove();
+            }
+            
+            if(removeOverseas === "Y" && nationCode === 'KR'){
+                $("#changeOverseasButton").remove();
+                $("div[name=addOverseasAddress]").remove();
+            }
+            
+            $("input:radio[name=deliveryNameCode]").click(function () {
+                var radioTxt = $("input:radio[name=deliveryNameCode]:checked").next('label').children('.for-a11y').text();
+                if ( $("#hDeliveryName").val() == '' || $("#hDeliveryName").val() == null )
+                {
+                    $("#deliveryName").val(radioTxt);
+                }
+                else {
+                    var oldDelivery = $("#hDeliveryName").val();
+                    $("#deliveryName").val(oldDelivery);
+                    
+                }
+                $($("#deliveryName").parents()[1]).addClass("box__form-motion--complete");
+            });
+            
+            if (0 == 0 && nationCode !== "KR"){
+                changeOverseas();
+            }
+            
+            window.addEventListener("message", function (e){
+                if (e.data.type === "setUpdateAddress") {
+                    setUpdateAddress(e.data.zipCode, e.data.roadAddr, e.data.sboxNo, e.data.sboxName, e.data.addr2);
+                }
+                if (e.data.type === "setCommonClose") {
+                    setCommonClose();
+                }
+            }); 
+        })
+    
+        function newShippingAddressSearchPopup() {
+    
+            location.hash = "_";
+            
+            var returnUrl = (location.origin || (location.protocol + "//'" + location.host)) + "/AddressSearch/ShippingAddressSearchBridgeNew";
+            var url = "https://address.gmarket.com/map?returnUrl=" + encodeURIComponent(returnUrl) + "&lang=" + getUrlParams("lang");
+            
+            if (isApp && $("#addr_search_layer").length == 0) {
+                $("<div id='addr_search_layer'><iframe id='addr_search_frame'></iframe></div>").appendTo("body");
+            }
+            
+            $("#addr_search_frame").attr("src", url);
+            $("#addr_search_frame").attr("allow", "geolocation *;");
+            $("#addr_search_frame").css("width", "100%");
+            $("#addr_search_frame").css("height", "100%");
+            $("#addr_search_frame").css("display", "block");
+            $("#addr_search_layer").css("width", "100%");
+            $("#addr_search_layer").css("height", "100%");
+            $("#addr_search_layer").css("z-index", "999");
+            $("#addr_search_layer").css("position", "fixed");
+            $("#addr_search_layer").css("top", "0");
+            $("#addr_search_layer").css("left", "0");
+            $("#addr_search_layer").show();
+            $("#wrap").hide();
+        }
+    
+        var errorMessage = {
+            "EnterName": "이름을 입력해 주세요.",
+            "EnterContactNo": "연락처를 입력해 주세요.",
+            "EnterDomesticPhoneNo": "연락처는 국내 휴대폰 번호를 입력하셔야합니다",
+            "EnterAddress": "주소를 입력해 주세요.",
+            "EnterNewAddress": "정확한 배송을 위해 도로명 주소로<br/>변경해주세요.",
+            "ConfirmNoDetail": "상세주소를 입력하지 않으셨습니다.<br>이대로 저장하시겠습니까?",
+            "ConfirmNoRequest": "배송 요청사항을 입력하지 않으셨습니다.<br>이대로 저장하시겠습니까?",
+            "EnterRequestDetail": "배송 요청사항 내 기타사항의 내용을 입력해주세요",
+            "ConfirmRemove": "주소를 삭제하시겠습니까?",
+            "ErrorTryLater": "오류가 발생하였습니다. 잠시 후 다시 시도해 주세요.",
+            "EnterOnlyNumber": "연락처는 숫자만 입력 바랍니다.",
+            "SelectNationCode": "배송국가를 선택해주세요.",
+            "EnterOverSeasAddressDetail": "상세주소를 입력하지 않으셨습니다.",
+            "EnterNoSpecialDeliveryName": "배송지명에 _ - ~ @ # & ( ) , . / 이외의 특수문자는 입력하실 수 없습니다.",
+            "EnterNoSpecialName": "받는 분 이름에 _ - ~ @ # & ( ) , . / 이외의 특수문자는 입력하실 수 없습니다.",
+            "EnterNoSpecialAddress": "상세주소에 _ - ~ @ # & ( ) , . / 이외의 특수문자는 입력하실 수 없습니다.",
+            "EnterNoSpecialDeliveryRequest": "배송 요청사항에 _ - ~ @ # & ( ) , . / 이외의 특수문자는 입력하실 수 없습니다.",
+            "EnterPhoneNo6DigitsMore": "연락처는 6자리 이상 입력해 주세요. ",
+            "DomainError" : "잘못된 접근입니다."
+        };
+    
+        function getErrorMessage(key) {
+            return errorMessage[key];
+        }
+        
+    </script>
+    
+    
+    
+    
+    
+    
+        <div id="wrapper">
+            <div id="container" class="box__mypage-container" style="min-height: 592px;">
+                <!-- To dev : 배송지 추가  mypage__new-address 클래스 추가 -->
+                <div id="content" class="mypage__wrap mypage__new-address">
+                    <!-- 나의 배송지 -->
+                    <h3 class="for-a11y">새 배송지 추가</h3>
+                    <div class="box__new-address">
+                        <div class="add-address-wrap">
+                            <!-- 배송지 아이콘 -->
+                            <div class="box__add-address">
+                                
+                                <h3 class="add-address__title">배송지명</h3>
+                                <div class="add-address__select-icon">
+                                    <h4 class="for-a11y">배송지 선택</h4>
+                                    <ul class="list-icon" role="none presentation">
+                                        <li class="list-item">
+                                            <div class="form__add-address form__add-address--radio">
+                                                <input type="radio" name="deliveryNameCode" id="input_radio21" class="add-address__radio sprite__add-address--before" value="1" checked="">
+                                                <label for="input_radio21" class="add-address__label sprite__add-address--before"><span class="for-a11y">배송지</span></label>
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="form__add-address form__add-address--radio home">
+                                                <input type="radio" name="deliveryNameCode" id="input_radio22" class="add-address__radio sprite__add-address--before" value="2">
+                                                <label for="input_radio22" class="add-address__label sprite__add-address--before"><span class="for-a11y">집</span></label>
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="form__add-address form__add-address--radio school">
+                                                <input type="radio" name="deliveryNameCode" id="input_radio24" class="add-address__radio sprite__add-address--before" value="3">
+                                                <label for="input_radio24" class="add-address__label sprite__add-address--before"><span class="for-a11y">학교</span></label>
+                                            </div>
+                                        </li>
+                                        <li class="list-item">
+                                            <div class="form__add-address form__add-address--radio office">
+                                                <input type="radio" name="deliveryNameCode" id="input_radio23" class="add-address__radio sprite__add-address--before" value="4">
+                                                <label for="input_radio23" class="add-address__label sprite__add-address--before"><span class="for-a11y">회사</span></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="box__form-group">
+                                    <div class="box__form-control box__form-motion box__form-motion--complete">
+                                        <label for="delivery_name" class="text__label">최대 10글자까지 자유롭게 수정 가능</label>
+                                        <!-- To.dev: 위 배송지 아이콘 선택에 따라 value 값을 배송지, 집, 회사, 학교로 기본 입력 -->
+                                        <div class="box__input">
+                                            <input type="hidden" name="hDeliveryName" id="hDeliveryName" class="text-placeholder" value="">
+                                            <input type="text" name="deliveryName" id="deliveryName" class="input_txt" title="배송지명 (변경가능해요)" value="배송지" maxlength="10" placeholder="최대 10글자까지 자유롭게 수정 가능" oninput="removeSpecial(this)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- 국내 배송지 -->
+                            <div class="box__add-address" name="addLocalAddress">
+                                <h3 class="add-address__title">받는 분</h3>
+                                <button id="changeOverseasButton" type="button" class="add-address__button--oversea sprite__add-address--after" onclick="changeOverseas()">해외로 배송</button>
+                                <div class="box__form-group">
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="userName" class="text__label">이름</label>
+                                        <div class="box__input"><input type="text" id="reciverName" name="reciverName" class="input_txt" maxlength="20" title="이름" placeholder="이름" oninput="removeSpecial(this)"></div>
+                                    </div>
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="hpNo" class="text__label">연락처</label>
+                                        <div class="box__input"><input type="tel" id="hpNo" name="hpNo" class="input_txt" title="연락처" placeholder="국내 휴대폰 번호만 입력 가능" maxlength="13" oninput="this.value = isGlobal() ? this.value.replace(/[^0-9]/g, '').replace(/(^02|^0505|^03[1|2|3]{1}|^04[1|2|3|4]{1}|^05[1|2|3|4|5]{1}|^06[1|2|3|4]{1}|^01[0|1|6|7|8|9]{1}|^070)([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-') 
+                                                                                                           : this.value.replace(/[^0-9]/g, '').replace(/(^01[0|1|6|7|8|9]{1})([0-9]+)?([0-9]{4})$/, '$1-$2-$3').replace('--', '-')"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box__add-address" name="addLocalAddress" id="beforeSearch">
+                                <h3 class="add-address__title">주소</h3>
+                                <div class="box__form-group">
+                                    <div class="box__form-control box__form-zipcode">
+                                        <button type="button" id="zipCodeSearchButton" name="afterSearch" onclick="newShippingAddressSearchPopup(); return false;" class="box__input sprite__add-address--before"><span class="text__label">우편번호 찾기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box__add-address" name="addLocalAddress" id="afterSearch" style="display: none;">
+                                <h3 class="add-address__title">주소</h3>
+                                <span class="sprite__add-address" id="sbox_icon" style="display: none"><span class="for-a11y">스마일박스</span></span>
+                                <input type="hidden" id="sboxNo" class="text-placeholder" value="">
+                                <input type="hidden" id="sboxName" class="text-placeholder" value="">
+                                <button type="button" name="afterSearch" onclick="newShippingAddressSearchPopup(); return false;" class="button__find-address">주소 변경</button>
+                                <div class="box__form-group">
+                                    <div class="box__form-control box__form-disabled">
+                                        <label for="defaultAddress" class="for-a11y">기본주소</label>
+                                        <div class="box__input">
+                                            <input type="text" id="defaultAddress" class="input_txt" value="[] " disabled="">
+                                            <input type="hidden" id="frontAddress" class="text-placeholder" value="">
+                                            <input type="hidden" id="zipCode" class="text-placeholder" value="">
+                                        </div>
+                                    </div>
+                                    <div class="box__form-control box__form-input-text" id="addressDetail">
+                                        <label for="backAddress" class="text__label">상세주소 (50자까지 입력 가능)</label>
+                                        <div class="box__input">
+                                            <input type="text" id="backAddress" class="input_txt" placeholder="상세주소 (50자까지 입력 가능)" maxlength="50">
+                                            <input type="hidden" id="zipCode" class="text-placeholder" value=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box__add-address" name="addLocalAddress" id="deliveryRequestForm">
+                                <h3 class="add-address__title">배송 요청사항</h3>
+                                <div class="box__form-group" id="deliverySelect">
+                                    <div class="box__control-select sprite__add-address--after box__form-control">
+                                        <label for="deliveryRequestCode" class="text__label">배송 요청사항(선택)</label>
+                                        <select id="deliveryRequestCode" name="deliveryRequestCode" onchange="selectDeliveryRequest(this.value)" class="form__select js-form__select">
+                                            <option selected="selected" value="0">배송 요청사항(선택)</option>
+                                            <option value="1">직접 수령하겠습니다</option>
+                                            <option value="2">배송 전 연락바랍니다</option>
+                                            <option value="3">부재 시 경비실에 맡겨주세요</option>
+                                            <option value="4">부재 시 문 앞에 놓아주세요</option>
+                                            <option value="5">부재 시 택배함에 넣어주세요</option>
+                                            <option value="6">직접 입력</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 해외 배송지 -->
+                            <div class="box__add-address" name="addOverseasAddress" style="display: none;">
+                                <h3 class="add-address__title">받는 분</h3>
+                                <button type="button" class="add-address__button--oversea sprite__add-address--after" onclick="changeLocal()">국내로 배송</button>
+                                <div class="box__form-group">
+                                    <div class="box__form-control sprite__add-address--after box__form-motion form__add-address--select-nation">
+                                        <input type="hidden" id="nationCode" name="nationCode" value="" class="text-placeholder">
+                                        <label for="input_nation1" class="text__label">배송국가</label>
+                                        <button type="button" id="input_nation1" class="select-button button__layer--full select-button--selected" data-target="#layer__select-nation" onclick="DimmedLayer.open('#layer__select-nation',this)">
+                                            <span class="flag sp_flag52"></span>
+                                            <span class="text__nation" id="nationName"></span>
+                                        </button>
+                                    </div>
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="overseasName" class="text__label">이름</label>
+                                        <div class="box__input"><input type="text" id="overseasName" class="input_txt" title="이름" placeholder="영어만 입력가능" oninput="this.value=this.value.replace(/[^a-z|A-Z|0-9|_\-~#&amp;(),.\/\s]+$/g,'');"></div>
+                                    </div>
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="overseasTel" class="text__label">연락처</label>
+                                        <div class="box__input box__input--overseas">
+                                            <input type="tel" id="overseas_country_code" class="text__code text-placeholder" title="국가코드" value="" readonly="">
+                                            <input type="tel" id="overseasTel" class="input_txt" title="연락처" placeholder="6자리 이상의 숫자만 입력 가능" onkeypress="this.value=this.value.replace(/[^0-9]/g,'');" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box__add-address" id="overseasAddressBox" name="addOverseasAddress" style="display: none;">
+                                <h3 class="add-address__title">주소</h3>
+                                <div class="box__form-group">
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="overseasAddress" class="text__label">Address</label>
+                                        <div class="box__input"><input type="text" id="overseasAddress" name="overseasAddress" class="input_txt" title="Address" placeholder="영어 또는 숫자만 입력 가능" oninput="this.value=this.value.replace(/[^a-z|A-Z|0-9|_\-~#&amp;(),.\/\s]+$/g,'');"></div>
+                                    </div>
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="overseasCity" class="text__label">City</label>
+                                        <div class="box__input"><input type="text" id="overseasCity" name="overseasCity" class="input_txt" title="City" placeholder="영어 또는 숫자만 입력 가능" oninput="this.value=this.value.replace(/[^a-z|A-Z|0-9|_\-~#&amp;(),.\/\s]+$/g,'');"></div>
+                                    </div>
+                                    <div class="box__form-control box__form-motion">
+                                        <label for="overseasState" class="text__label">State/Province</label>
+                                        <div class="box__input"><input type="text" id="overseasState" name="overseasState" class="input_txt" title="State/Province" placeholder="영어 또는 숫자만 입력 가능" oninput="this.value=this.value.replace(/[^a-z|A-Z|0-9|_\-~#&amp;(),.\/\s]+$/g,'');"></div>
+                                    </div>
+                                    <div class="box__form-control box__form-motion" id="overseasZipCodeBox">
+                                        <label for="overseasZipCode" class="text__label">Zip Code</label>
+                                        <div class="box__input"><input type="text" id="overseasZipCode" name="overseasZipCode" class="input_txt" title="Zip Code" placeholder="영어 또는 숫자만 입력 가능" oninput="this.value=this.value.replace(/[^a-z|A-Z|0-9|_\-~#&amp;(),.\/\s]+$/g,'');"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box__address-buttons">
+                            <form id="addressForm" method="post">
+                                <input type="hidden" id="AddrNo" name="AddrNo" value="0">
+                                <input type="hidden" name="Name" class="text-placeholder" value="">
+                                <input type="hidden" name="DeliveryName" class="text-placeholder" value="">
+                                <input type="hidden" name="DeliveryNameCode" class="text-placeholder" value="">
+                                <input type="hidden" name="HpNo" class="text-placeholder" value="">
+                                <input type="hidden" name="FrontAddress" class="text-placeholder" value="">
+                                <input type="hidden" name="BackAddress" class="text-placeholder" value="">
+                                <input type="hidden" name="ZipCode" class="text-placeholder" value="">
+                                <input type="hidden" name="DeliveryRequest" class="text-placeholder" value="">
+                                <input type="hidden" name="DeliveryRequestCode" class="text-placeholder" value="">
+                                <input type="hidden" name="NationIsocode" class="text-placeholder" value="">
+                                <!-- 버튼 -->
+                                <div class="add-address__button-area">
+                                    <button type="button" class="add-address__button button__default" onclick="closeEvent()">취소하기</button>
+                                    <button type="button" class="add-address__button button__confirm" onclick="save()">저장하기</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- alert layer box -->
+                    <div class="box__layer box__layer-address-alert" id="addressAlert" aria-live="polite" role="dialog" aria-modal="true">
+                        <div class="box__layer-content">
+                            <div class="box__content box__line--one">
+                                <p class="text" id="alertMessage"></p>
+                                <button type="button" class="button__close sprite__mypage--before" aria-label="레이어 닫기"><span class="for-a11y">닫기</span></button>
+                            </div>
+                            <div class="box__button">
+                                <button type="button" class="button button__check">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- confirm layer box -->
+                    <div class="box__layer box__layer-address-alert box__layer-smile-alert" id="addressConfirm" aria-live="polite" role="dialog" aria-modal="true">
+                        <div class="box__layer-content">
+                            <div class="box__content">
+                                <h4 class="text__title">선택한 주소로 배송지 변경</h4>
+                                <p class="text" id="confirmMessage"></p>
+                                <p class="text text__alert--smilefresh" style="display:none;">배송지 변경 시<br>구매 가능한 상품이 달라질 수 있습니다.<br>배송지를 변경하시겠습니까?</p>
+                                <!-- To.dev : 배송지 선택 후 알럿 스마일배송 호출 -->
+                                <p class="text text__alert--smiledelivery" style="display:none;">주소변경에 따라 상품의 배송정보가<br> 변경될 수 있습니다.<br> 배송지를 변경하시겠습니까?</p>
+                                <button type="button" class="button__close sprite__mypage--before" aria-label="레이어 닫기"><span class="for-a11y">닫기</span></button>
+                            </div>
+                            <div class="box__button">
+                                <button type="button" class="button button__cancel">취소</button>
+                                <button type="button" class="button button__check">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="gds-top-button gds-js-top-button gds-top-button--nobn" tabindex="-1" aria-hidden="true"><i class="gds-icon gds-icon-arrow-up-medium-gray900"></i><span class="for-a11y">위로 가기</span></button>
+        </div>
+    
+        <div class="box__layer box__layer--full box__layer--select-nation" id="layer__select-nation" role="dialog" aria-modal="true">
+        <div class="box__layer-content">
+            <div class="box__layer-header">
+                <h2 class="text__header">배송국가 선택</h2>
+                <button type="button" class="button__close sprite__mypage--before" onclick="closeNationLayer()"><span class="for-a11y">레이어 닫기</span></button>
+            </div>
+            <div class="box__layer-body" style="max-height: 840px;">
+                <div class="select-nation-wrap">
+                    <div class="box__alert">
+                        <button class="button__change-shipping-kr strite__cart--after" onclick="closeAndChangeLocal()">국내배송(한국)으로 변경</button>
+                    </div>
+                    <div class="sec_path">
+                        <div class="indicator" id="shipindi">
+                            <a href="#typeA"><span>A</span></a>
+                            <a href="#typeB"><span>B</span></a>
+                            <a href="#typeC"><span>C</span></a>
+                            <a href="#typeD"><span>D</span></a>
+                            <a href="#typeE"><span>E</span></a>
+                            <a href="#typeF"><span>F</span></a>
+                            <a href="#typeG"><span>G</span></a>
+                            <a href="#typeH"><span>H</span></a>
+                            <a href="#typeI"><span>I</span></a>
+                            <a href="#typeJ"><span>J</span></a>
+                            <a href="#typeK"><span>K</span></a>
+                            <a href="#typeL"><span>L</span></a>
+                            <a href="#typeM"><span>M</span></a>
+                            <a href="#typeN"><span>N</span></a>
+                            <a href="#typeO"><span>O</span></a>
+                            <a href="#typeP"><span>P</span></a>
+                            <a href="#typeQ"><span>Q</span></a>
+                            <a href="#typeR"><span>R</span></a>
+                            <a href="#typeS"><span>S</span></a>
+                            <a href="#typeT"><span>T</span></a>
+                            <a href="#typeU"><span>U</span></a>
+                            <a href="#typeV"><span>V</span></a>
+                            <a href="#typeW"><span>W</span></a>
+                            <a href="#typeX"><span>X</span></a>
+                            <a href="#typeY"><span>Y</span></a>
+                            <a href="#typeZ"><span>Z</span></a>
+                        </div>
+    
+                        <p class="cur_txt"><span class="blind">current Text</span><span class="txt">A</span></p>
+    
+                        <div class="lst_nation" id="shipNation">
+                            <div class="scroller">
+                                <ul>
+        
+        <li class="sec_nat" id="typeA">
+            <p class="grp_txt">A</p>
+            <ul>
+                
+                <li class="al">
+                    <input type="radio" id="ct1" name="ship_country" data-calling-code="+355" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct1" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Albania</span></label>
+                </li>
+                
+                <li class="ae">
+                    <input type="radio" id="ct2" name="ship_country" data-calling-code="+971" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct2" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Arab Emirates</span></label>
+                </li>
+                
+                <li class="ar">
+                    <input type="radio" id="ct3" name="ship_country" data-calling-code="+54" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct3" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Argentina</span></label>
+                </li>
+                
+                <li class="am">
+                    <input type="radio" id="ct4" name="ship_country" data-calling-code="+374" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct4" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Armenia</span></label>
+                </li>
+                
+                <li class="au">
+                    <input type="radio" id="ct5" name="ship_country" data-calling-code="+61" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct5" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Australia</span></label>
+                </li>
+                
+                <li class="at">
+                    <input type="radio" id="ct6" name="ship_country" data-calling-code="+43" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct6" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Austria</span></label>
+                </li>
+                
+                <li class="az">
+                    <input type="radio" id="ct7" name="ship_country" data-calling-code="+994" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct7" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Azerbaijan</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeB">
+            <p class="grp_txt">B</p>
+            <ul>
+                
+                <li class="bh">
+                    <input type="radio" id="ct8" name="ship_country" data-calling-code="+973" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct8" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Bahrain</span></label>
+                </li>
+                
+                <li class="bd">
+                    <input type="radio" id="ct9" name="ship_country" data-calling-code="+880" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct9" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Bangladesh</span></label>
+                </li>
+                
+                <li class="by">
+                    <input type="radio" id="ct10" name="ship_country" data-calling-code="+375" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct10" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Belarus</span></label>
+                </li>
+                
+                <li class="be">
+                    <input type="radio" id="ct11" name="ship_country" data-calling-code="+32" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct11" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Belgium</span></label>
+                </li>
+                
+                <li class="bt">
+                    <input type="radio" id="ct12" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct12" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Bhutan</span></label>
+                </li>
+                
+                <li class="ba">
+                    <input type="radio" id="ct13" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct13" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Bosnia and Herzegovina</span></label>
+                </li>
+                
+                <li class="br">
+                    <input type="radio" id="ct14" name="ship_country" data-calling-code="+55" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct14" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Brazil</span></label>
+                </li>
+                
+                <li class="bn">
+                    <input type="radio" id="ct15" name="ship_country" data-calling-code="+673" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct15" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Brunei Darussalam</span></label>
+                </li>
+                
+                <li class="bg">
+                    <input type="radio" id="ct16" name="ship_country" data-calling-code="+359" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct16" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Bulgaria</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeC">
+            <p class="grp_txt">C</p>
+            <ul>
+                
+                <li class="ca">
+                    <input type="radio" id="ct17" name="ship_country" data-calling-code="+1" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct17" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Canada</span></label>
+                </li>
+                
+                <li class="cv">
+                    <input type="radio" id="ct18" name="ship_country" data-calling-code="+238" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct18" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Cape Verde</span></label>
+                </li>
+                
+                <li class="cl">
+                    <input type="radio" id="ct19" name="ship_country" data-calling-code="+56" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct19" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Chile</span></label>
+                </li>
+                
+                <li class="cn">
+                    <input type="radio" id="ct20" name="ship_country" data-calling-code="+86" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct20" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">China</span></label>
+                </li>
+                
+                <li class="cr">
+                    <input type="radio" id="ct21" name="ship_country" data-calling-code="+506" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct21" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">CostaRica</span></label>
+                </li>
+                
+                <li class="hr">
+                    <input type="radio" id="ct22" name="ship_country" data-calling-code="+385" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct22" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Croatia</span></label>
+                </li>
+                
+                <li class="cy">
+                    <input type="radio" id="ct23" name="ship_country" data-calling-code="+357" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct23" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Cyprus</span></label>
+                </li>
+                
+                <li class="cz">
+                    <input type="radio" id="ct24" name="ship_country" data-calling-code="+420" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct24" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Czech Republic</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeD">
+            <p class="grp_txt">D</p>
+            <ul>
+                
+                <li class="dk">
+                    <input type="radio" id="ct25" name="ship_country" data-calling-code="+45" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct25" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Denmark</span></label>
+                </li>
+                
+                <li class="dj">
+                    <input type="radio" id="ct26" name="ship_country" data-calling-code="+253" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct26" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Djibouti</span></label>
+                </li>
+                
+                <li class="do">
+                    <input type="radio" id="ct27" name="ship_country" data-calling-code="+1" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct27" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Dominican Republic</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeE">
+            <p class="grp_txt">E</p>
+            <ul>
+                
+                <li class="ec">
+                    <input type="radio" id="ct28" name="ship_country" data-calling-code="+593" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct28" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Ecuador</span></label>
+                </li>
+                
+                <li class="eg">
+                    <input type="radio" id="ct29" name="ship_country" data-calling-code="+20" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct29" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Egypt</span></label>
+                </li>
+                
+                <li class="ee">
+                    <input type="radio" id="ct30" name="ship_country" data-calling-code="+372" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct30" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Estonia</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeF">
+            <p class="grp_txt">F</p>
+            <ul>
+                
+                <li class="fj">
+                    <input type="radio" id="ct31" name="ship_country" data-calling-code="+679" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct31" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Fiji</span></label>
+                </li>
+                
+                <li class="fi">
+                    <input type="radio" id="ct32" name="ship_country" data-calling-code="+358" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct32" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Finland</span></label>
+                </li>
+                
+                <li class="fr">
+                    <input type="radio" id="ct33" name="ship_country" data-calling-code="+33" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct33" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">France</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeG">
+            <p class="grp_txt">G</p>
+            <ul>
+                
+                <li class="ge">
+                    <input type="radio" id="ct34" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct34" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Georgia</span></label>
+                </li>
+                
+                <li class="de">
+                    <input type="radio" id="ct35" name="ship_country" data-calling-code="+49" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct35" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Germany</span></label>
+                </li>
+                
+                <li class="gr">
+                    <input type="radio" id="ct36" name="ship_country" data-calling-code="+30" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct36" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Greece</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeH">
+            <p class="grp_txt">H</p>
+            <ul>
+                
+                <li class="hk">
+                    <input type="radio" id="ct37" name="ship_country" data-calling-code="+852" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct37" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Hong Kong</span></label>
+                </li>
+                
+                <li class="hu">
+                    <input type="radio" id="ct38" name="ship_country" data-calling-code="+36" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct38" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Hungary</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeI">
+            <p class="grp_txt">I</p>
+            <ul>
+                
+                <li class="in">
+                    <input type="radio" id="ct39" name="ship_country" data-calling-code="+91" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct39" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">India</span></label>
+                </li>
+                
+                <li class="id">
+                    <input type="radio" id="ct40" name="ship_country" data-calling-code="+62" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct40" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Indonesia</span></label>
+                </li>
+                
+                <li class="ie">
+                    <input type="radio" id="ct41" name="ship_country" data-calling-code="+353" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct41" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Ireland</span></label>
+                </li>
+                
+                <li class="il">
+                    <input type="radio" id="ct42" name="ship_country" data-calling-code="+972" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct42" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Israel</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeJ">
+            <p class="grp_txt">J</p>
+            <ul>
+                
+                <li class="jp">
+                    <input type="radio" id="ct43" name="ship_country" data-calling-code="+81" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct43" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Japan</span></label>
+                </li>
+                
+                <li class="jo">
+                    <input type="radio" id="ct44" name="ship_country" data-calling-code="+962" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct44" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Jordan</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeK">
+            <p class="grp_txt">K</p>
+            <ul>
+                
+                <li class="kz">
+                    <input type="radio" id="ct45" name="ship_country" data-calling-code="+7" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct45" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Kazakhstan</span></label>
+                </li>
+                
+                <li class="ke">
+                    <input type="radio" id="ct46" name="ship_country" data-calling-code="+254" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct46" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Kenya</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeL">
+            <p class="grp_txt">L</p>
+            <ul>
+                
+                <li class="la">
+                    <input type="radio" id="ct47" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct47" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Lao People s Democratic Republic</span></label>
+                </li>
+                
+                <li class="lv">
+                    <input type="radio" id="ct48" name="ship_country" data-calling-code="+371" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct48" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Latvia</span></label>
+                </li>
+                
+                <li class="lu">
+                    <input type="radio" id="ct49" name="ship_country" data-calling-code="+352" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct49" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Luxembourg</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeM">
+            <p class="grp_txt">M</p>
+            <ul>
+                
+                <li class="mo">
+                    <input type="radio" id="ct50" name="ship_country" data-calling-code="+853" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct50" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Macau</span></label>
+                </li>
+                
+                <li class="mk">
+                    <input type="radio" id="ct51" name="ship_country" data-calling-code="+389" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct51" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Macedonia</span></label>
+                </li>
+                
+                <li class="m2">
+                    <input type="radio" id="ct52" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct52" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Malaysia(East)</span></label>
+                </li>
+                
+                <li class="my">
+                    <input type="radio" id="ct53" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct53" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Malaysia(West)</span></label>
+                </li>
+                
+                <li class="mv">
+                    <input type="radio" id="ct54" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct54" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Maldives</span></label>
+                </li>
+                
+                <li class="mu">
+                    <input type="radio" id="ct55" name="ship_country" data-calling-code="+230" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct55" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Mauritius</span></label>
+                </li>
+                
+                <li class="mx">
+                    <input type="radio" id="ct56" name="ship_country" data-calling-code="+52" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct56" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Mexico</span></label>
+                </li>
+                
+                <li class="mn">
+                    <input type="radio" id="ct57" name="ship_country" data-calling-code="+976" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct57" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Mongolia</span></label>
+                </li>
+                
+                <li class="ma">
+                    <input type="radio" id="ct58" name="ship_country" data-calling-code="+212" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct58" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Morocco</span></label>
+                </li>
+                
+                <li class="mm">
+                    <input type="radio" id="ct59" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct59" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Myanmar</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeN">
+            <p class="grp_txt">N</p>
+            <ul>
+                
+                <li class="np">
+                    <input type="radio" id="ct60" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct60" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Nepal</span></label>
+                </li>
+                
+                <li class="nl">
+                    <input type="radio" id="ct61" name="ship_country" data-calling-code="+31" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct61" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Netherlands</span></label>
+                </li>
+                
+                <li class="an">
+                    <input type="radio" id="ct62" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct62" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">NETHERLANDS ANTILLES</span></label>
+                </li>
+                
+                <li class="nz">
+                    <input type="radio" id="ct63" name="ship_country" data-calling-code="+64" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct63" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">New Zealand</span></label>
+                </li>
+                
+                <li class="ni">
+                    <input type="radio" id="ct64" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct64" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Nicaragua</span></label>
+                </li>
+                
+                <li class="ng">
+                    <input type="radio" id="ct65" name="ship_country" data-calling-code="+234" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct65" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Nigeria</span></label>
+                </li>
+                
+                <li class="no">
+                    <input type="radio" id="ct66" name="ship_country" data-calling-code="+47" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct66" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Norway</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeO">
+            <p class="grp_txt">O</p>
+            <ul>
+                
+                <li class="om">
+                    <input type="radio" id="ct67" name="ship_country" data-calling-code="+968" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct67" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Oman</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeP">
+            <p class="grp_txt">P</p>
+            <ul>
+                
+                <li class="pk">
+                    <input type="radio" id="ct68" name="ship_country" data-calling-code="" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct68" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Pakistan</span></label>
+                </li>
+                
+                <li class="pe">
+                    <input type="radio" id="ct69" name="ship_country" data-calling-code="+51" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct69" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Peru</span></label>
+                </li>
+                
+                <li class="ph">
+                    <input type="radio" id="ct70" name="ship_country" data-calling-code="+63" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct70" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Philippines</span></label>
+                </li>
+                
+                <li class="pl">
+                    <input type="radio" id="ct71" name="ship_country" data-calling-code="+48" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct71" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Poland</span></label>
+                </li>
+                
+                <li class="pt">
+                    <input type="radio" id="ct72" name="ship_country" data-calling-code="+351" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct72" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Portugal</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeQ">
+            <p class="grp_txt">Q</p>
+            <ul>
+                
+                <li class="qa">
+                    <input type="radio" id="ct73" name="ship_country" data-calling-code="+974" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct73" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Qatar</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeR">
+            <p class="grp_txt">R</p>
+            <ul>
+                
+                <li class="ro">
+                    <input type="radio" id="ct74" name="ship_country" data-calling-code="+40" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct74" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Romania</span></label>
+                </li>
+                
+                <li class="ru">
+                    <input type="radio" id="ct75" name="ship_country" data-calling-code="+7" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct75" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Russian Federation</span></label>
+                </li>
+                
+                <li class="rw">
+                    <input type="radio" id="ct76" name="ship_country" data-calling-code="+250" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct76" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Rwanda</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeS">
+            <p class="grp_txt">S</p>
+            <ul>
+                
+                <li class="sa">
+                    <input type="radio" id="ct77" name="ship_country" data-calling-code="+966" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct77" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Saudi Arabia</span></label>
+                </li>
+                
+                <li class="sg">
+                    <input type="radio" id="ct78" name="ship_country" data-calling-code="+65" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct78" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Singapore</span></label>
+                </li>
+                
+                <li class="sk">
+                    <input type="radio" id="ct79" name="ship_country" data-calling-code="+421" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct79" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Slovakia</span></label>
+                </li>
+                
+                <li class="si">
+                    <input type="radio" id="ct80" name="ship_country" data-calling-code="+386" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct80" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Slovenia</span></label>
+                </li>
+                
+                <li class="es">
+                    <input type="radio" id="ct81" name="ship_country" data-calling-code="+34" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct81" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Spain</span></label>
+                </li>
+                
+                <li class="se">
+                    <input type="radio" id="ct82" name="ship_country" data-calling-code="+46" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct82" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Sweden</span></label>
+                </li>
+                
+                <li class="ch">
+                    <input type="radio" id="ct83" name="ship_country" data-calling-code="+41" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct83" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Switzerland</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeT">
+            <p class="grp_txt">T</p>
+            <ul>
+                
+                <li class="tw">
+                    <input type="radio" id="ct84" name="ship_country" data-calling-code="+886" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct84" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Taiwan</span></label>
+                </li>
+                
+                <li class="th">
+                    <input type="radio" id="ct85" name="ship_country" data-calling-code="+66" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct85" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Thailand</span></label>
+                </li>
+                
+                <li class="tr">
+                    <input type="radio" id="ct86" name="ship_country" data-calling-code="+90" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct86" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Turkiye</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeU">
+            <p class="grp_txt">U</p>
+            <ul>
+                
+                <li class="gb">
+                    <input type="radio" id="ct87" name="ship_country" data-calling-code="+44" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct87" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">United Kingdom</span></label>
+                </li>
+                
+                <li class="us">
+                    <input type="radio" id="ct88" name="ship_country" data-calling-code="+1" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct88" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">United States</span></label>
+                </li>
+                
+                <li class="uz">
+                    <input type="radio" id="ct89" name="ship_country" data-calling-code="+998" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct89" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Uzbekistan</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeV">
+            <p class="grp_txt">V</p>
+            <ul>
+                
+                <li class="vn">
+                    <input type="radio" id="ct90" name="ship_country" data-calling-code="+84" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct90" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Vietnam</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li class="sec_nat" id="typeZ">
+            <p class="grp_txt">Z</p>
+            <ul>
+                
+                <li class="zm">
+                    <input type="radio" id="ct91" name="ship_country" data-calling-code="+260" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for="ct91" tabindex="0"><span class="flag sp_flag52"></span><span class="tit">Zambia</span></label>
+                </li>
+                
+            </ul>
+        </li>
+        
+    </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/x-handlebars-template" id="nation_list_template">
+        {{#each this}}
+        <li class="sec_nat" id={{concat "type" grp}}>
+            <p class="grp_txt">{{grp}}</p>
+            <ul>
+                {{#each nations}}
+                <li class={{lower code}}>
+                    <input type="radio" id={{concat "ct" idx}} name="ship_country" data-calling-code="{{callingCode}}" class="sp_cart bx_rdo">
+                    <label role="button" aria-current="false" for={{concat "ct" idx}}><span class="flag sp_flag52"></span><span class="tit">{{name}}</span></label>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </script>
+    
+    <script>
+        $.ajax({
+            url: "/ShippingAddress/GetCountries",
+            dataType: 'json',
+            type: "POST",
+            success: function (result) {
+                var nationListTag = Handlebars.compile($('#nation_list_template').html())(result);
+                $('#shipNation').find('ul').html(nationListTag);
+                
+                if (isGlobal()){
+                    $(".sp_flag52").css("display", "none");
+                }
+                
+                if (addressData.NationIsocode !== null && addressData.NationIsocode !== ""){
+                    $('#layer__select-nation').find('li.' + addressData.NationIsocode.toLowerCase()).find(':radio').click().change();
+                }
+                
+                if (nationCode !== "KR"){
+                    $('#layer__select-nation').find('li.' + nationCode.toLowerCase()).find(':radio').click().change();
+                }
+                
+                if($('.select-nation-wrap').length){
+                    ariaButton();
+                }
+                
+                $('.lst_nation .bx_rdo').on('change', function(){
+                    if($(this).is(":checked")) {
+                        $(this).next().attr('aria-current', true).parents('li').siblings().find('label').attr('aria-current', false)
+                    }
+                });
+            },
+            error: function (error) {
+                alert("오류가 발생하였습니다. 잠시 후 다시 시도해 주세요.(13)");
+            }
+        });
+    
+        $('#shipNation').on('change', ':radio', function () {
+            var radio = $(this);
+            var nationCode = radio.closest('li').attr('class');
+            var nationCodeUpperCase = nationCode.toUpperCase();
+    
+            var span = radio.closest('li').find('span.tit');
+            var nationName = span.text();
+    
+            var callingCode = radio.attr('data-calling-code');
+    
+            $('#hNationCode').val(nationCodeUpperCase);
+            
+            // 국가 이름 변경
+            $('#add-forean-address').find('span.text__nation').text(nationName);
+            
+            $('#nationCode').val(nationCodeUpperCase);
+            
+            // 국가 이름 변경
+            $('#nationName').text(nationName);
+            
+            // 국가 아이콘 변경
+            changeNationClass(nationCode);
+    
+            // 국가 보이게 수정
+            showNationName();
+            
+            // 국번 설정
+            $('#overseas_country_code').val(callingCode).next().trigger('change');
+            
+            if (nationCodeUpperCase === "HK"){
+                $("#overseasZipCodeBox").remove();
+            }else if (!$("#overseasZipCodeBox").length){
+                var tempStr = '<div class="box__form-control box__form-motion" id="overseasZipCodeBox">';
+                tempStr += '<label for="overseasZipCode" class="text__label">Zip Code</label>';
+                tempStr += '<div class="box__input"><input type="text" id="overseasZipCode" name="overseasZipCode" class="input_txt" title="Zip Code" placeholder="영어 또는 숫자만 입력 가능" oninput="this.value=this.value.replace(/[^a-z|A-Z|0-9|_\-~#&(),.\/\s]+$/g,\'\');" value=""></div>';
+                tempStr += '</div>';
+                $("#overseasAddressBox > .box__form-group").append(tempStr);
+            }
+            // 레이어 닫기
+            closeNationLayer();
+        })
+    
+        function changeNationClass(code) {
+            var input = $('#input_nation1');
+            var lastClass = input.attr('class').split(' ').pop();
+            input.removeClass(lastClass).addClass(code);
+        }
+    
+        function showNationName() {
+            var div = $('#input_nation1').closest('div');
+            div.addClass('box__form-motion--complete');
+        }
+    
+        function hideNationName() {
+            var div = $('#input_nation1').closest('div');
+            div.removeClass('box__form-motion--complete');
+        }
+    
+        function closeNationLayer() {
+            event.preventDefault();
+            DimmedLayer.close('#layer__select-nation');
+        }
+    
+        function closeAndChangeLocal() {
+            event.preventDefault();
+            closeNationLayer();
+            changeLocal();
+        }
+    
+    </script>
+    
+        
+        <script type="text/javascript" src="https://script.gmarket.co.kr/mobile/js/application/kr/mypage/app.js"></script>
+        <script type="text/javascript" src="/Scripts/Common/grapnel.min.js"></script>
+        <script>
+            $(function () {
+                $(".box__layer-address-alert").find(".button__check, .button__cancel, .button__close").off().on('click', function(){
+                    $('.box__new-address').removeAttr('inert');
+                    $('.box__header-content').removeAttr('inert');
+                    var thisId = $(this).parents('.box__layer-address-alert').attr('id');
+                    $('#'+thisId).hide();
+                });
+            });
+        </script>
+    
+    
+    
+            <hr>
+            <!-- FOOTER -->
+            <!--// FOOTER -->
+        </div>
+        <!-- //WRAPPER -->
+    
+        <!--주소찾기 팝업-->
+        <!-- Layer Popup-->
+        <div id="addr_search_layer" align="center" style="position:absolute; top:0px; left:0px; z-index:999; display:none;">
+            <iframe id="addr_search_frame" name="addr_search_frame" style="width:100%; height:100%;" marginwidth="0" frameborder="0" allow="geolocation *;"></iframe>
+        </div>
+    
+    
+    
+    </body></html>
+</body>
+</html>

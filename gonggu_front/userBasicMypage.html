@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="zzz.css">
+    <link rel="stylesheet" type="text/css" href="regular.css">
+    <link rel="stylesheet" type="text/css" href="cs.css">
+
+</head>
+<body>
+    
+    <div class="content-wrap">
+        <div class="frame-full head-mypage">
+            <h2 class="blind">마이페이지</h2>
+<div class="user-info-box">
+<div class="inner">
+    <div class="column user-info "><div class="txt">
+            <span class="img">
+            <i class="ico-cou-level03"></i>
+</span>
+            <div class="" style="display:inline-block;width:calc(100% - 60xp);">
+                <p class="greeting">
+                    <strong class="name">65기기</strong>님 반갑습니다
+                </p>
+                <ul class="sep-list user-info-list type3">
+                    <li><a href="/mypage/memberBenefitsInfo"><span>닭차장</span> <i class="ico-arr-right"></i>
+                                    2% 적립</a></li>
+                            <li>
+                                <a href="/member/userTag/intro" class="user-tag-location-btn">
+                                    <p>나의 식단 유형 <strong>테스트 하기</strong></p>
+                                </a>
+                            </li>
+                        </ul>
+                <p class="next-rank-text">26,130원 더 구매 시, 닭부장 진급!</p>
+                                    </div>
+
+
+</div>
+</div><!--// user-info -->
+
+    <div class="column orange-mem-coupon-box">
+                <i class="ico-normal-crown"></i>
+                <a href="/mypage/orangeMember" class="text-white">
+                    <p>오렌지멤버스<br>3만 포인트 받기 <i class="ico-arr-right"></i></p>
+                </a>
+            </div>
+        <div class="column order">
+        <dt>주문/배송</dt>
+        <dd><a href="/mypage/orderlist"><strong class="num" id="orderCountText">5</strong>건</a></dd>
+    </div><!--// order -->
+    <div class="column coupon">
+        <dt>나의 쿠폰</dt>
+        <dd><a href="/mypage/myCoupon"><strong class="num" id="couponCountText">3</strong>개</a></dd>
+    </div><!--// coupon -->
+    <div class="column point">
+        <dt>포인트</dt>
+        <dd class="text-primary"><a href="/mypage/myPoint"><strong class="num" id="totalUnusedPointText">1,543</strong>P</a></dd>
+    </div><!--// point -->
+</div><!--// inner -->
+</div><!--// user-info-box -->
+
+<div class="layer-wrap layer-usertag" id="usertag-popup">
+<div class="layer-pop">
+    <div class="layer-inner">
+        <div class="layer-head">
+            <h4 class="layer-pop-title">나의 식단 유형</h4>
+        </div>
+        <div class="layer-body">
+            <div class="layer-usertag-inn">
+                <div class="layer-usertag-img">
+                    <img id="researchImg" src="/resources/pc/images/img/usertag-simpler.jpg" alt="간편식 러버">
+                </div>
+                <div class="layer-usertag-desc-group">
+                    <dl class="layer-usertag-defi">
+                        <dt>유형별 한마디</dt>
+                        <dd><strong id="researchTxt1">"밥보다 시간!"</strong></dd>
+                    </dl>
+                    <dl class="layer-usertag-defi">
+                        <dt>유형 소개</dt>
+                        <dd id="researchTxt2">혹시 도시락 찾으러 오셨어요? 편하고 빠른 식사를 선호해요.</dd>
+                    </dl>
+                    <dl class="layer-usertag-defi">
+                        <dt>랭닭 이용 꿀팁</dt>
+                        <dd id="researchTxt3">홈화면 [랭킹]메뉴의 [별별랭킹] 카테고리에서 상황에 맞는 다양한 꿀조합을 소개 받아요!</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="layer-usertag-btn-group">
+                <a href="/member/userTag/intro" class="btn-basic-lg2 btn-default">
+                    <span>테스트 다시하기</span>
+                </a>
+                <a href="/promotion/exhibit/userTagList" id="researchTag" class="btn-basic-lg2 btn-black">
+                    <span>추천 식단 보러가기</span>
+                </a>
+            </div>
+        </div><!--// layer-body -->
+        <button type="button" class="btn-x-sm ui-close-pop" title="닫기"><i class="ico-x-black"></i><span class="blind">닫기</span></button>
+    </div>
+</div><!--// layer-pop  -->
+</div><!--// layer-pop-wrap #popupSample-02 -->
+
+<script>
+
+$(document).ready(function () {
+    if($(".orange-mem-coupon-box.OMV2").length > 0){
+        setTimeout(()=>{
+            $(".orange-mem-coupon-box.OMV2").addClass("action");
+        },1000);
+    }
+
+
+    let tagResult = '';
+    let resultObj = {
+        '01':{
+            img:'/resources/pc/images/img/usertag-newbie.jpg',
+            text1:'"여기는 뭐가 맛있어?"',
+            text2:'환영해요! 닭가슴살의 세계에 이제 막 입문했네요!',
+            text3:'내 입맛에 딱 맞는 닭가슴살 찾고 있다면, 홈화면의 [1팩 담기]에서 여러 상품을 한 팩 씩 골라보세요! ',
+            tag: '',
+            type: '01'
+        },
+        '02':{
+            img:'/resources/pc/images/img/usertag-smart.jpg',
+            text1:'"어? 이거 맛있을까?"',
+            text2:'이 구역의 맛잘알! 하지만 그냥 사진 않죠. 할인 혜택과 후기까지 꼼꼼히 살피고 신중하게 구매해요. ',
+            text3:'홈화면에서 [이달의 특가]를 확인하세요! 매달 새로운 맛과 혜택으로 찾아갑니다!',
+            tag: '',
+            type: '02'
+        },
+        '03':{
+            img:'/resources/pc/images/img/usertag-maint.jpg',
+            text1:'"다이어트는 꾸준히 해야죠~"',
+            text2:'타이트하기 보단 꾸준히 실천할 수 있는 식단을 선호해요. 맛있으면서도 단백질, 당류 등 성분은 꼭 체크하는 진짜 다이어터! ',
+            text3:'맛도 성분도 한 번에 비교하려면 최근 본 상품에서 [비교담기] 서비스를 이용해보세요!',
+            tag: '',
+            type: '03'
+        },
+        '04':{
+            img:'/resources/pc/images/img/usertag-mania.jpg',
+            text1:'"먹다보면 다~ 맛있어"',
+            text2:'다이어트에서 효율을 아주 중시해요. 때로 지겹더라도 끈기있는 실천이 다이어트의 지름길이라고 생각해요.',
+            text3:'[오렌지멤버스]에 가입하고, 살 때마다 추가할인&적립 받아요!',
+            tag: '',
+            type: '04'
+        },
+        '05':{
+            img:'/resources/pc/images/img/usertag-frenz.jpg',
+            text1:'"저는 그냥 랭닭에서 사요"',
+            text2:'식단은 이미 일상이에요. 오랜 경험으로 믿고 먹는, 믿고 추천하는 제품들이 있어요.',
+            text3:'꾸준히 먹는 제품은 [정기구매] 서비스를 통해서 추가할인 받아보세요!',
+            tag: '',
+            type: '05'
+        },
+        '06':{
+            img:'/resources/pc/images/img/usertag-standard.jpg',
+            text1:'"저는 그냥 정석대로 먹는 편?"',
+            text2:'대회, 바디프로필 등 명확한 목표를 갖고 식단을 하고 있어요. 건강기능식품부터 다이어트 간식까지 다이어트 제품에 대해서는 빠삭해요!',
+            text3:'식단은 하루라도 놓칠 수 없어! [특급배송]으로 빠르게 받아 완벽한 식단 텐션을 유지하세요!',
+            tag: '',
+            type: '06'
+        },
+        '07':{
+            img:'/resources/pc/images/img/usertag-simpler.jpg',
+            text1:'"밥보다 시간!"',
+            text2:'혹시 도시락 찾으러 오셨어요? 편하고 빠른 식사를 선호해요.',
+            text3:'홈화면 [랭킹]메뉴의 [별별랭킹] 카테고리에서 상황에 맞는 다양한 꿀조합을 소개 받아요!',
+            tag: '',
+            type: '07'
+        },
+    };
+
+    let userTagExhibitionList = '[{v_exhibition_cd=EX202306230000000247, n_sort=7.000000, v_exhibition_nm=간편식 러버, v_ex_name=07, n_num=1}, {v_exhibition_cd=EX202306230000000245, n_sort=6.000000, v_exhibition_nm=스마트 다이어터, v_ex_name=02, n_num=2}, {v_exhibition_cd=EX202306220000000241, n_sort=5.000000, v_exhibition_nm=닭가슴살 뉴비, v_ex_name=01, n_num=3}, {v_exhibition_cd=EX202306230000000242, n_sort=4.000000, v_exhibition_nm=랭닭 프렌즈, v_ex_name=05, n_num=4}, {v_exhibition_cd=EX202306230000000243, n_sort=3.000000, v_exhibition_nm=유지어터, v_ex_name=03, n_num=5}, {v_exhibition_cd=EX202306230000000244, n_sort=2.000000, v_exhibition_nm=헬스 매니아, v_ex_name=04, n_num=6}, {v_exhibition_cd=EX202306230000000246, n_sort=1.000000, v_exhibition_nm=다이어트의 정석, v_ex_name=06, n_num=7}]';
+    if(isEmpty(userTagExhibitionList) == false){
+        for (const key in resultObj) {
+            
+            if ("07" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+1;
+            }
+            
+            if ("02" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+2;
+            }
+            
+            if ("01" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+3;
+            }
+            
+            if ("05" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+4;
+            }
+            
+            if ("03" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+5;
+            }
+            
+            if ("04" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+6;
+            }
+            
+            if ("06" === resultObj[key].type) {
+                resultObj[key]['tag'] = "#special-div"+7;
+            }
+            
+        }
+    }
+
+    let userTag = '';
+    if(isEmpty(userTag) == false){
+        let userTagType = '';
+        for (const key in resultObj) {
+            if (key === userTagType) {
+                tagResult = resultObj[key];
+                break;
+            };
+        };
+        $('#researchImg').attr('src',tagResult.img);
+        $('#researchTxt1').text(tagResult.text1);
+        $('#researchTxt2').text(tagResult.text2);
+        $('#researchTxt3').text(tagResult.text3);
+        $('#researchTag').attr('href',"/promotion/exhibit/userTagList"+tagResult.tag);
+    }
+
+    const benefitsAlertMsg = '';
+    //혜택 쿠폰 alert 메시지
+    if(isEmpty(benefitsAlertMsg) == false){
+        alert(benefitsAlertMsg);
+    }
+});
+
+$(document).ready(function(){
+    if(get_cookie("closePoint") != "done"){
+        pointAlert();
+    }
+})
+function pointAlert(){
+    setTimeout(()=>{
+        if($(window).scrollTop() > 150){
+            $("#pointAlert").css("position","fixed");
+            $("#pointAlert").animate({"top":"70px"})
+        }
+        else if($(".all-depth-cate").css("display") != "block"){
+            $("#pointAlert").animate({"top":"15px"})
+        }
+
+        $(window).on('load scroll', function() {
+            if ($('#pointAlert').length > 0 && $('#pointAlert').css("display") == "block") { pointAlertScroll();}
+        });
+        setTimeout(()=>{
+            $("#pointAlert").animate(
+                {"top":"-100px"},
+                1000,
+                function(){
+                $("#pointAlert").remove();
+            });
+        },5000)
+    },1000)
+}
+
+var lastScrollTop = 0;
+function pointAlertScroll(){
+    var winS = $(window).scrollTop();
+    var gnbw = $('.gnb-wrap'),
+        gnbPosition = gnbw.position();
+    var $header= $('.header'),
+        $headerP = $header.offset().top,
+        $headerH = $header.height();
+
+    if(winS > lastScrollTop) { //downscroll
+
+        if( winS > gnbPosition.top){
+            // fix 생김
+            $("#pointAlert").css({"position":"fixed"});
+        } else {
+            // fix 지움
+            $("#pointAlert").css({"position":"absolute"})
+        }
+    } else { //upscroll
+
+        if( winS < $headerP + $headerH){
+            // fix 지움
+            $("#pointAlert").css({"position":"absolute"})
+            if($("#pointAlert").css("top") == "70px"){
+                $("#pointAlert").css("top","15px");
+            }
+        } else{
+            // fix 생김
+            $("#pointAlert").css({"position":"fixed"});
+            if($("#pointAlert").css("top") == "15px"){
+                $("#pointAlert").css("top","70px");
+            }
+        }
+    }
+    lastScrollTop = winS;
+}
+
+
+
+function closePoint(cookieNm, expiredays) {
+    setCookiePointAlert( cookieNm, "done" , expiredays);
+    $("#pointAlert").animate({"top":"-100px"});
+}
+
+function setCookiePointAlert( name, value, expiredays ) {
+    var todayDate = new Date();
+    todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);
+    if ( todayDate > new Date() )
+    {
+        expiredays = expiredays - 1;
+    }
+    todayDate.setDate( todayDate.getDate() + expiredays );
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+function get_cookie(name) {
+    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return value? value[2] : null;
+}
+
+
+
+</script></div>
+        <div class="frame-sm">
+            <div class="frame-left">
+<div class="aside-menu-wrap">
+    <nav class="aside-menu">
+        <ul class="menu-list">
+            <li>
+                <a href="/mypage/orderlist" class="menu">주문관리</a>
+                <ul class="depth2">
+                    <li><a href="/mypage/orderlist">주문내역</a></li>
+                        <li><a href="/mypage/cancellist">취소/반품 내역</a></li>
+                        <li class=""><a href="/mypage/routineDelivery">정기배송 관리</a></li>
+                    <li class=""><a href="/mypage/routineDelivery/card">정기결제 관리</a></li>
+                    <li class=""><a href="/mypage/restock/list">재입고 알림 상품</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu">혜택관리</a>
+                <ul class="depth2">
+                    <li class=""><a href="/mypage/myCoupon">나의 쿠폰</a></li>
+                    <li class=""><a href="/mypage/myPoint">포인트</a></li>
+                    <li class=""><a href="/mypage/giftCard/list">랭킹닭컴 상품권 관리</a></li><!-- 활성화될 경우 li에 addClass current  -->
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu">활동관리</a>
+                <ul class="depth2">
+                    <li class=""><a href="/mypage/recentProduct/list">최근 본 상품</a></li>
+                    <li class=""><a href="/mypage/wish/list">찜한상품</a></li>
+                    <li class=""><a href="/mypage/wishBrand/list">관심브랜드</a></li>
+                    <li><a href="/mypage/userCounsel/list">1:1문의</a></li><!-- 활성화될 경우 li에 addClass current  -->
+                        <li><a href="/mypage/prodReview/list">상품후기</a></li><!-- 활성화될 경우 li에 addClass current  -->
+                        <li><a href="/mypage/prodCounsel/list">상품문의내역</a></li><!-- 활성화될 경우 li에 addClass current  -->
+                        <li><a href="/mypage/dietManage/list">식단상담 목록</a></li><!-- 활성화될 경우 li에 addClass current  -->
+                        </ul>
+            </li>
+            <li>
+                <a href="" class="menu goVipView">VIP전용관</a>
+            </li>
+            <li class="">
+                <a href="/mypage/orangeMember" class="menu">오렌지멤버스</a>
+            </li>
+            <li>
+                <a href="/mypage/delivery" class="menu">회원정보관리</a>
+                <ul class="depth2">
+                    <li class=""><a href="/mypage/delivery">배송지 관리</a></li>
+                    <li><a href="/mypage/info/mypage">정보수정</a></li><!-- 활성화될 경우 li에 addClass current  -->
+                        </ul>
+            </li>
+        </ul>
+    </nav><!--// menu-mypage -->
+    <div class="aside-link-box">
+        <a href="/service/voc"><i class="ico-bl-speaker"></i><span>고객의 소리</span><i class="ico-arr-right"></i></a>
+    </div>
+</div><!--// aside-menu-wrap -->
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    /*setCurrnetMenuCss();*/
+
+    $(".goVipView").click(function (e) {
+        e.preventDefault();
+        cmAjax({
+            url : "/mypage/vip/checkTargetAjax"
+            , type : "POST"
+            , dataType : "json"
+            , success : function (data) {
+
+                if (data.status == "succ") {
+                    if(data.message == "Y") {
+                        document.location.href = "/mypage/vip/list";
+                        return;
+                    } else {
+                        alert(data.message);
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+        });
+    });
+});
+
+function setCurrnetMenuCss(){
+    const pathUrl = window.location.pathname;
+    $('.menu-list').find('li').removeClass('current');
+    $('.menu-list').find('a').each(function (){
+        if(pathUrl.indexOf($(this).attr('href')) > -1){
+            $(this).parent('li').addClass('current')
+        }
+    });
+}
+</script>
+<div class="frame-right">
+    <form id="submitForm" name="submitForm" method="post">
+		<h2 class="stit"><span>회원정보 변경</span></h2>
+		<div class="form_section">
+			<div class="content_intro">
+				<h3>필수정보입력</h3>
+				<p class="join_txt">
+					<img src="//sui.ssgcdn.com/ui/ssg/img/mem/ico_star.gif" alt="필수"> 표시는 필수입력 항목 이오니 반드시 입력해 주세요.
+				</p>
+			</div>
+			<fieldset class="fieldset medium">
+				<legend>항목입력</legend>
+				<div class="field">
+					<span class="label">아이디 <img src="//sui.ssgcdn.com/ui/ssg/img/mem/ico_star.gif" alt="필수"></span>
+					<div class="insert" id="idCheckDiv">
+						
+							<span>dlflq11</span>
+						
+						
+					</div>
+				</div>
+				<div class="field">
+					<span class="label">이름 <img src="//sui.ssgcdn.com/ui/ssg/img/mem/ico_star.gif" alt="필수"></span>
+					<div class="insert">
+						<span id="mbrNm">강태성</span>
+					</div>
+				</div>
+				
+				
+				<div class="field">
+					<label for="mbrCntsELno" class="label">휴대폰번호 <img src="//sui.ssgcdn.com/ui/ssg/img/mem/ico_star.gif" alt="필수"></label>
+					<input type="hidden" name="cntsTypeCd" value="20">
+					<input type="hidden" name="mbrCntsno" id="mbrCntsno">
+					<div class="insert">
+						<div>
+							<select id="mbrCntsano" name="mbrCntsano" title="식별번호 선택" class="select small" style="width: 102px;">
+								<option value="010" addtoptnval1="" addtoptnval2="" selected="selected">010</option><option value="011" addtoptnval1="" addtoptnval2="">011</option><option value="016" addtoptnval1="" addtoptnval2="">016</option><option value="017" addtoptnval1="" addtoptnval2="">017</option><option value="018" addtoptnval1="" addtoptnval2="">018</option><option value="019" addtoptnval1="" addtoptnval2="">019</option>
+							</select>
+							<span>-</span>
+							<input type="tel" id="mbrCntsELno" title="휴대폰 번호 뒷자리" placeholder="- 없이 뒷자리를 입력해주세요." value="47541175" class="input_text small translated" style="width:136px;ime-mode:disabled;" maxlength="8" numberonly=""><span class="trans_placeholder blind" data-default-txt="- 없이 뒷자리를 입력해주세요.">- 없이 뒷자리를 입력해주세요.</span>
+						</div>
+					</div>
+				</div>
+				<div class="field" id="emailChg01">
+					<label for="email" class="label">이메일주소 <img src="//sui.ssgcdn.com/ui/ssg/img/mem/ico_star.gif" alt="필수"></label>
+					<div class="insert">
+						<input type="text" id="email" name="email" placeholder="자주 사용하시는 이메일 주소를 입력해주세요." value="dlflq11@gmail.com" class="input_text small translated" style="width:250px" maxlength="50"><span class="trans_placeholder blind" data-default-txt="자주 사용하시는 이메일 주소를 입력해주세요.">자주 사용하시는 이메일 주소를 입력해주세요.</span>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div class="form_btn_area">
+			<p id="alertArea" class="desc"></p>
+			<a href="javascript:void(0);" onclick="modify.update();" id="submitBtn" class="cs_btn large black">변경하기</a>
+		</div>
+		<div class="cs_info_box">
+			<h3 class="cs_info_subtit">회원정보변경 안내</h3>
+			<ul class="cs_info_lst">
+				<li>신세계포인트 회원 주소 정보는 신세계포인트 사이트에서 변경하실 수 있습니다.</li>
+				<li>배송지 정보는 '나의 정보관리 &gt; 배송지 관리' 메뉴에서 추가/수정/삭제하실 수 있습니다.</li>
+				<li>주문 정보는 회원 정보에 등록된 휴대폰번호 및 이메일주소로 안내됩니다.</li>
+			</ul>
+		</div>
+	</form>
+<div class="frame-cnt-inner">
+    <h3 class="title-list">회원 정보</h3>
+    여기다 회원정보 추가
+</div>
+</div><!--// content-wrap -->
+<form id="command" name="deliveryPop" action="/mypage/main" method="post"><input type="hidden" name="actionFlag" value="M">
+<input type="hidden" name="vDeliveryid">
+<input type="hidden" name="vOrderCd">
+<div>
+<input type="hidden" name="_csrf" value="a91b0f57-cc25-49e7-a7da-d6918d115134">
+</div></form><div class="layer-wrap" id="modal-my-delivery" style="display: none"></div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    selectBox(); 
+});
+
+$('.member-ext').on('click',function(){
+    $('.member-ext').hide();
+});
+
+var shippingModifyPop = function (e) {
+    e.preventDefault();
+
+    var $this = $(this);
+
+    var vOrderCd = $this.parent().find("input[name='vOrderCd']").val();
+
+    var $form = $("form[name='deliveryPop']");
+    $form.find("input[name='vOrderCd']").val(vOrderCd);
+
+    $("#modal-my-delivery").load("/mypage/orderlist/shippingModifyPop", $form.serialize(), function () {
+        $(this).show();
+        //selectBox(); 
+    });
+}
+
+function fnGoProdReviewDetail(obj){
+    var prodCd = $(obj).attr("data-prodCd");
+    var orderCd = $(obj).attr("data-orderCd");
+    var sitecd = $(obj).attr("data-sitecd");
+    var optionid = $(obj).attr("data-optionid");
+    location.href='/mypage/prodReview/reg?prodCd=' + prodCd + '&ordercd='+orderCd+'&sitecd='+sitecd + '&optionid='+optionid;
+}
+
+function postReturn(data) {
+    var vAddr = '';
+    if (data.roadAddr == null) {
+        vAddr = data.jibunAddr;
+    } else {
+        vAddr = data.roadAddr;
+    }
+
+    $('#userDeliveryForm input[name=vPostcd]').val(data.zipno);
+    $('#userDeliveryForm input[name=vAddr]').val(vAddr);
+    openDiv();
+}
+
+
+function openPostSearchForm(nowPageNo) {
+    $("#postSearchForm input[name=nowPageNo]").val(nowPageNo);
+    var param = $("#postSearchForm");
+    $('#jusoDiv').load('/juso/getAddrApi', param.serialize());
+}
+
+function openDiv(e) {
+    $('.hideLayers').hide();
+    $('#userDeliveryDiv').show();
+}
+
+var purchaseConfirm = function (e) {
+    e.preventDefault();
+
+    var $this = $(this);
+    var vOrderProdid = $this.data("prodid");
+    var vOrdercd = $this.data("ordercd");
+
+    if (confirm("구매확정 하시겠습니까?")) {
+        cmAjax({
+            url:"/mypage/orderlist/orderConfirm",
+            type: "post",
+            data: {
+                "vOrderProdid": vOrderProdid,
+                "vOrdercd": vOrdercd
+            },
+            success: function (res) {
+                if (res.status === "succ") {
+                    location.reload();
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+}
+
+function openUserDeliveryListPop(e) {
+    vOrdercd = $(this).data("ordercd");
+    let nDayDlvCnt = $(this).data("daydlvcnt");
+    let nDawnDlvCnt = $(this).data("dawndlvcnt");
+    const vExpressYn = $(this).data("expressYn");
+    $('#modal-my-delivery').load("/order/order/userDeliveryList", function () {
+        $("#modal-my-delivery").data("ordercd", vOrdercd);
+        $("#modal-my-delivery").data("daydlvcnt", nDayDlvCnt);
+        $("#modal-my-delivery").data("dawndlvcnt", nDawnDlvCnt);
+        $("#modal-my-delivery").data("vexpressyn", vExpressYn);
+    });
+    $("#modal-my-delivery").show();
+}
+
+function callbackSelectAddr(obj) {
+    //console.log('주소변경 : ');
+    //console.log(obj);
+
+    let daydlvcnt = $("#modal-my-delivery").data("daydlvcnt");
+    let dawndlvcnt = $("#modal-my-delivery").data("dawndlvcnt");
+    let vexpressyn = $("#modal-my-delivery").data("vexpressyn");
+
+    if (daydlvcnt > 0 && obj.vDawnDlvYn == 'Y' && obj.vTodayDlvYn == 'N'){
+        alert("선택한 지역으로는 당일배송이 불가능합니다.");
+        return ;
+    }
+
+    if(vexpressyn == 'Y'  && (obj.vDoorAccessMethodCd == null || $.trim(obj.vDoorAccessMethodCd) == '')) {
+        alert("공동현관 출입 방법을 설정하여 주십시오");
+        return;
+    }
+
+    if(vexpressyn == 'Y' && obj.vExdlvArea == '10001' && dawndlvcnt != '0' && (obj.vDawnDlvMessageSendTime == null || $.trim(obj.vDawnDlvMessageSendTime) == '')) {
+        alert("새벽도착 메시지 알림을 설정하여 주십시오");
+        return;
+    }
+
+    if(vexpressyn == 'Y' && obj.vDoorAccessMethodCd == '04' ) {
+        alert("공동현관 출입불가 배송지는 특급배송으로 주문할 수 없습니다.");
+        return;
+    }
+
+    var data = {
+        "vOrderCd" : $("#modal-my-delivery").data("ordercd"),
+        "vAddr" : obj["vAddr"],
+        "vAddrDtl" : obj["vAddrDtl"],
+        "vDeliveryCell" : obj["vDeliveryCell"],
+        "vDeliveryCell1" : obj["vDeliveryCell1"],
+        "vDeliveryCell2" : obj["vDeliveryCell2"],
+        "vDeliveryNm" : obj["vDeliveryNm"],
+        "vPostcd" : obj["vPostcd"],
+        "vDoorAccessMethodCd" : obj["vDoorAccessMethodCd"],
+        "vDoorAccessMethodMemo" : obj["vDoorAccessMethodMemo"],
+        "vDawnDlvMessageSendTime" : obj["vDawnDlvMessageSendTime"]
+    }
+
+    cmAjax({
+        url: "/mypage/orderlist/shippingModifyPopSave",
+        type: "POST",
+        data: data,
+        dataType: "json",
+        success: function (res) {
+            if (res.status === "succ") {
+                alert("배송지 정보가 변경되었습니다.");
+                closePop()
+                location.reload();
+            } else {
+                alert(res.message);
+            }
+        }
+    });
+}
+
+function closePop() {
+
+
+    $('#modal-my-delivery').html('');
+    $("#modal-my-delivery").hide();
+    $('body').removeAttr('style');
+
+}
+
+
+var saveShipping = function (e) {
+    e.preventDefault();
+
+    var $form = $("form[id='userDeliveryForm']");
+
+    var valueByName = getValueByName($form, "vDeliveryNm");
+    if (valueByName === "") {
+        alert("받는 분을 입력해주세요.");
+        return;
+    }
+
+    if (getValueByName($form, "vPostcd") === "") {
+        alert("우편번호를 입력해주세요.");
+        return;
+    }
+
+    if (getValueByName($form, "vAddrDtl") === "") {
+        alert("상세주소를 입력해주세요.");
+        return;
+    }
+
+    // getValueByName($form, "vDeliveryCell1") === "" ||
+    if (getValueByName($form, "vDeliveryCell2") === "") {
+        alert("휴대폰 번호를 입력해 주세요.");
+        return;
+    }
+
+    var data = $form.serialize();
+    cmAjax({
+        url: "/mypage/orderlist/shippingModifyPopSave",
+        type: "POST",
+        data: data,
+        dataType: "json",
+        success: function (res) {
+            deliveryPopClose();
+            location.reload();
+        }
+    });
+}
+
+function putBack (e) {
+
+    e.preventDefault();
+
+    var $this = $(this);
+    var productCd = $this.data("prodid");
+    var optionId = $this.data("optionid");
+    var productNm = $this.data("prodnm");
+    var imgUrl = $this.data("imageurl");
+
+    var orderArray = [],
+        order = {
+            "v_productcd" : productCd,
+            "n_qty" : 1,
+            "v_uproductcd" : productCd,
+            "v_gproductcd" : productCd, // productcd
+        }
+
+    if (checkNullOrEmptyValue(optionId)) {
+        order['v_optionid'] = optionId
+    }
+
+    orderArray.push(order);
+
+    fnCartInsert("01", orderArray, function(status, cartType){
+
+        if(status == 'succ'){
+
+            if (confirm("장바구니에 추가하였습니다.\n장바구니로 이동하시겠습니까?")) {
+                location.href = "/order/cart";
+            }
+        }else{
+            alert("장바구니 등록 실패");
+        }
+    }, '');
+
+}
+
+var checkNullOrEmptyValue = function (parameter) {
+    if (parameter === null || parameter === '' || parameter === undefined || parameter === 'null') return false;
+    return true;
+};
+
+function closeCartPop () {
+    $('.toast-box-wrap').fadeOut();
+    setTimeout(function () {
+        $('.toast-box-wrap').remove();
+    },1000)
+}
+
+var cancelRequest = function (e) {
+    e.preventDefault();
+    var target = e.currentTarget;
+    var dataset = target.dataset;
+    var ordercd = dataset.ordercd;
+    if (ordercd) {
+        if (confirm("상품 포장이 시작된 [상품 준비중] 이후 단계에서는 취소가 제한될 수 있습니다.\n"+
+            "주문 내역에서 취소 완료 여부를 꼭 확인 부탁드립니다.\n"+
+            "취소 완료 확인 후 재구매를 부탁드립니다.\n"+
+            "취소 접수를 진행 하시겠습니까?")) {
+            // location.href = "/mypage/ordercancel?ordercd=" + ordercd;
+
+            cmAjax({
+                url: "/mypage/orderCancelAjax",
+                type: "post",
+                data: {"vOrdercd": ordercd,"isMypageCancel":"Y"},
+                dataType: "json",
+                success: function(res) {
+                    if (res.status === "succ") {
+
+                        if (res.message === "true") {
+                            location.href = "/mypage/orderdetail?orderCd=" + ordercd;
+                        } else {
+                            location.href = "/mypage/cancellist"
+                        }
+                    } else {
+                        alert("주문 취소 신청 중 문제가 발생했습니다.");
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+    }
+}
+
+var deliveryConfirmed = function (e) {
+    e.preventDefault();
+
+    var $this = $(this);
+    var vOrderProdid = $this.data("prodid");
+    var vOrdercd = $this.data("ordercd");
+
+    if (confirm("수취확인 처리 하시겠습니까?")) {
+        cmAjax({
+            url:"/mypage/orderlist/deliveryConfirm",
+            type: "post",
+            data: {"vOrderProdid": vOrderProdid,
+                "vOrdercd" : vOrdercd},
+            success: function (res) {
+                if (res.status === "succ") {
+                    location.reload();
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+}
+
+
+$(document).ready(function() {
+
+    $("html").click(function(){
+
+        $(".tommorow_tooltip").removeClass("show");
+
+    })
+
+})
+    .on("click", ".shipping-modify-btn", openUserDeliveryListPop)
+    .on("click", ".btn-confirmed", purchaseConfirm)
+    // .on("click", ".btn-put-back", putBack)
+    .on("click", ".btn-cancel-request", cancelRequest)
+    .on("click", ".ui-close-pop", closePop)
+    .on("click", ".btn-delivery-confirmed", deliveryConfirmed)
+;
+
+function fnDlvPop(ordercd, orderProdid,dawnDlvYn,dayDlvYn){
+    event.preventDefault();
+    if(dayDlvYn =='Y'){
+        alert("당일배송 상품은 배송 조회하실 수 없습니다.");
+        return false;
+    }
+    window.open("/mypage/orderdlvpop?vOrdercd="+ordercd+"&vOrderProdid="+orderProdid + "&vDawnDlvYn="+dawnDlvYn + "&vDayDlvYn=" + dayDlvYn, "popUpWin", "width=480px, height=832px, status=yes, scrollbars=no,resizable=yes, menubar=no");
+}
+
+function routineCancelReq(dlvReqno){
+    if(confirm("정기배송은 정기배송관리 화면에서 관리할 수 있습니다. 이동 하시겠습니까?")){
+        location.href = "/mypage/routineDelivery/detail?vDlvReqno="+dlvReqno;
+    }
+}
+
+function checkLogin(nextUrl){
+    const loginId = 'dlflq';
+    if(isEmpty(loginId)){
+        if(confirm('로그인 후 이용이 가능합니다. 로그인 하시겠습니까?')){
+            window.location.href='/auth/login?loginRedirectUrl=' + gfnUrlEncoding(nextUrl);
+        }
+        return;
+    }
+
+    if(nextUrl){
+        window.location.href=nextUrl;
+    }
+}
+</script>
+<script src="/resources/pc/js/order/cart.js"></script>
+<script src="/resources/common/js/order/restore_cart.js"></script>
+</div><!--// frame-sm -->
+    </div>
+</body>
+</html>
