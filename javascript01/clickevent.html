@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 100px;border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="test1('click')">click</div>
+    <div onmouseover="test1('mouseover')">마우스오버</div>
+    <div onmouseenter="test1('mouseenter')">마우스엔터</div>
+    <div id="test">
+        JS로 이벤트 추가
+    </div>
+
+    <script>
+        function test1(str){
+            console.log(str);
+        }
+    </script>
+</body>
+</html>

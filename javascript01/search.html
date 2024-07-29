@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #recommend{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    검색어 : <input type="text" id="search-input" onclick="showPlaceHolder(this)" oninput="showRecommend()" onfocusout="refresh()">
+    <div id="recommend">
+        추천검색어1, 추천검색어2
+    </div>
+
+    <script>
+        const showPlaceHolder = (searchInput) => {
+            searchInput.placeholder="검색어를 입력해주세요";
+        }
+
+        const showRecommend = async () => {
+
+            //추천 검색어 태그 보이게 하기
+            let recommend = document.getElementById("recommend");
+            recommend.style.display="block";
+            //input 태그에 입력 내용 받아오기
+            let keyword = document.getElementById("search-input").value;
+
+            //백엔드에 키워드 전송 할 주소
+            let url = "httpL//localhost:8080/search/post?title=" + keyword;
+
+            //백엔드에 데이터 전송 및 응답 받아오기
+            response = await axios.get(url);
+            console.log(response);
+
+            let keywords = "";
+
+            //받아온 데이터에서 원하는 내용만 뽑아서
+            for(const data of response.data){
+                console.log(data.title);
+                keywords = keywords + ", " + data.title; 
+            }
+
+            //친 검색어 div 받아온 내용 추가
+            document.getElementById("recommend").innerText = keywords;
+        }
+
+        const refresh = () => {
+            document.getElementById("search-input").placeholder="";
+            document.getElementById("recommend").style.display="none";
+        }
+
+
+    </script>
+</body>
+</html>

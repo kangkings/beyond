@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lottoArr = [];
+        let temp;
+
+        for(let i = 0; i < 6 ; i++){
+            let randomFourDigitNumber = Math.floor(1+Math.random() * 45)
+            if(lottoArr.includes(randomFourDigitNumber)){
+                i--;
+            }else{
+                lottoArr.push(randomFourDigitNumber);
+            }
+        }
+
+        for(let i = 0; i < 6; i++){
+            for(let j = 0; j < 5; j++){
+                if(lottoArr[j] > lottoArr[j+1]){
+                    temp = lottoArr[j];
+                    lottoArr[j] = lottoArr[j+1];
+                    lottoArr[j+1] = temp;
+                }
+            }
+        }
+        
+
+        console.log(lottoArr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="agree-container">
+            <input type="checkbox" id="all" name="agree" onchange="agreeAll()">모두 동의 (선택 정보 포함)<br>
+            <input type="checkbox" name="agree" onchange="checkAgree()">[필수] 필수 약관1 <br>
+            <input type="checkbox" name="agree" onchange="checkAgree()"> [필수] 필수 약관2 <br>
+            <input type="checkbox" name="agree" onchange="checkAgree()">[필수] 필수 약관3 <br>
+            <input type="checkbox" name="agree" onchange="checkAgree()">[선택] 선택 약관1 <br>
+            <input type="checkbox" name="agree" onchange="checkAgree()">[선택] 선택 약관2 <br>
+            <button disabled onclick="next()">버튼</button>
+        </div>
+        <div id="signup-container">
+            
+        </div>
+    </div>
+
+    <script>
+        function next(){
+            let agreeContainer = document.getElementById("agree-container").remove();
+            let signupContainer = document.getElementById("container");
+            signupContainer.style.display = "block";
+            signupContainer.innerHTML = '이메일 주소 : <input type="text" name="email"><br>비밀번호 : <input type="password" name="password"><br>';
+            
+        }
+        function agreeAll(){
+            let all = document.getElementById("all");
+            let agreeList = document.getElementsByName("agree");
+            if(all.checked){
+                for(let i = 0; i < agreeList.length; i ++){
+                    agreeList[i].checked=true;
+                }
+            }else{
+                for(let i = 0; i < agreeList.length; i ++){
+                    agreeList[i].checked=false;
+                }
+            }
+            checkAgree();
+        }
+
+        function checkAgree(){
+            let agreeList = document.getElementsByName("agree");
+            let submit = document.getElementsByTagName("button")[0];
+            let isAllChecked = false;
+
+
+            if(agreeList[1].checked && agreeList[2].checked && agreeList[3].checked){
+                submit.disabled=false;
+                console.log("gd");
+            }else{
+                submit.disabled=true;
+            }
+
+            if(agreeList[1].checked && agreeList[2].checked && agreeList[3].checked
+            && agreeList[4].checked && agreeList[5].checked){
+                agreeList[0].checked=true;
+            }else{
+                agreeList[0].checked=false;
+            }
+        }
+    </script>
+</body>
+</html>
