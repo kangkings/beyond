@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>번개장터</title>
+    <link rel="shortcut icon" href="images/market/favicon.ico">
+
+    <!--아이콘-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- 부트스트랩 icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="css/market/common.css">
+    <link rel="stylesheet" href="css/market/index.css">
+    <link rel="stylesheet" href="css/market/join.css">
+    <link rel="stylesheet" href="css/goods/goods_selling_form.css">
+
+    <!-- js -->
+    <script src="js/market/jquery-3.6.0.min.js"></script>
+    <script src="js/market/menu_hover.js"></script>
+    <script src="js/market/login_modal.js"></script>
+
+</head>
+
+<body>
+    <a id="skipNav" href="#contents-area">본문 바로가기</a>
+    <div id="wrapper">
+        <!-- header 영역 -->
+        <header>
+            <div id="top_header_bot_border">
+                <div id="top_header">
+                    <div class="container text-center">
+                        <div id="top_header_menu" class="row justify-content-between">
+                            <div class="col-4 top_header_icon">
+                            </div>
+                            <div class="col-4">
+                                <div class="row justify-content-end top_header_login">
+                                    <div class="col-4">
+                                        <a href="#" class="btn_map_close">
+                                            로그인/회원가입
+                                        </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="mypage.html">
+                                            마이페이지
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="bot_header_border">
+            <div id="bot_header">
+                <div class="container text-center">
+                    <div class="row justify-content-start">
+                        <div class="col-3 header_logo">
+                            <h1 class="hidden">로고</h1>
+                            <a href="메인페이지.html">
+                                <img src="images/market/logo.svg" alt="번개장터 로고">
+                            </a>
+                        </div>
+                        <div class="col-6 top_searh_area">
+                            <div id="top_searh">
+                                <input type="text" placeholder="상품명, 지역명, @상점명 입력">
+                                <img src="images/market/search.png" alt="검색">
+                            </div>
+                        </div>
+                        <div class="col-1 b_h_left_menu">
+                            <a href="">
+                                <img src="images/market/sell.png" alt="판매하기">
+                                공구등록
+                            </a>
+                        </div>
+                        <div class="col-1 b_h_left_menu store">
+                            <a href="mypage.html">
+                                <img src="images/market/my_store.png" alt="내상점">
+                                내 정보
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container text-center hamburger_area">
+                    <div class="row">
+                        <div class="col-md-1 hamburger">
+                            <img id="menu" src="images/market/hamburger.png" alt="메뉴">
+                        </div>
+                        <div class="col-md-4 sell_center">
+
+                        </div>
+                        <!-- 메뉴 호버 -->
+                        <div id="test_area">
+                            <ul id="test_cates">
+                                <h2>전체 카테고리<span> ></span></h2>
+                                <li id="clothes"><a href="market_category_list.html">의류</a></li>
+                                <li id="acc"><a href="market_category_list.html">악세서리</a></li>
+                            </ul>
+                            <ul id="test_clos">
+                                <h3>의류</h3>
+                                <li><a href="market_category_list.html">남성의류</a></li>
+                                <li><a href="market_category_list.html">여성의류</a></li>
+                            </ul>
+                            <ul id="test_accs">
+                                <h3>악세서리</h3>
+                                <li><a href="market_category_list.html">시계/쥬얼리</a></li>
+                                <li><a href="market_category_list.html">패션 악세서리</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main_content 영역 -->
+        <div id="main_content">
+            <!--하위 메뉴-->
+            <nav class="content_nav">
+                <a href="" class="active">상품등록</a>
+                <a href="구매 내역 조회.html">구매 내역</a>
+            </nav>
+
+            <!--판매 폼-->
+            <section class="goods_form">
+                <h2>기본정보 <span class="red">*필수항목</span></h2>
+                <form action="" class="frm_selling_goods">
+                    <div class="goods_title_area">
+                        <p>제목<span class="red">*</span></p>
+                        <div class="goods_title">
+                            <input type="text" name="goodsTitle" id="goods_title" maxlength="40"
+                                placeholder="상품 제목을 입력해주세요." oninput="countTitleLength(event);">
+                            <span class="goods_title_length"><span></span>/40</span>
+                        </div>
+                    </div>
+                    <div class="goods_count_area">
+                        <p>수량</p>
+                        <p><input type="text" name="goodsCount" value="1" oninput="valueIsNumber(event)">개</p> 
+                    </div>
+                    <div class="goods_category_area">
+                        <p>카테고리<span class="red">*</span></p>
+                        <div>
+                            <div class="goods_category">
+                                <div class="goods_Lcategory">
+                                    <div>의류</div>
+                                    <div>악세서리</div>
+                                    <div>악세서리</div>
+                                    <div>악세서리</div>
+                                    <div>악세서리</div>
+                                    <div>악세서리</div>
+                                </div>
+                            </div>
+                            <p class="hidden"><span>⊘</span> 상세 카테고리를 확인해주세요</p>
+                            <p>선택한 카테고리 : <span class="selected_category"></span></p>
+                            <input type="hidden" name="Lcategory">
+                            <input type="hidden" name="Scategory">
+                        </div>
+                    </div>
+                    <div class="goods_info_area">
+                        <p>설명<span class="red">*</span></p>
+                        <div>
+                            <textarea name="goodsInfo" id="goodsInfo" cols="30" rows="10" maxlength="2000"
+                                oninput="countInfoLength(event)"></textarea>
+                            <div class="goods_info_warn">
+                                <span class="info_length"><span></span>/2000</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="btn_submit_area">
+            <div class="inner_submit">
+                <!--폼으로 등록 테스트 하실 때 type=submit으로 바꿔서 진행해주세요-->
+                <input type="button" class="btn_goods_submit" value="등록하기">
+            </div>
+        </div>
+        <!-- // main_content 영역 -->
+        <!-- footer 영역 -->
+        <footer>
+            <div id="top_footer_border_area">
+                <div id="top_footer_area">
+                    <ul>
+                        <li>회사소개</li>
+                        <li>이용약관</li>
+                        <li>운영정책</li>
+                        <li>개인정보처리방침</li>
+                        <li>청소년보호정책</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mid_footer_area" class="container text-center">
+                <div class="row">
+                    <div class="col mid_footer_areas">
+                        <div class="mid_footer_left">
+                            <p>번개장터(주) 사업자정보</p>
+                            <p>
+                                대표이사 : 최재화, 강승현 | 개인정보보호책임자 : 문제근<br>
+                                사업자등록번호 : 113-86-45836 | 통신판매업신고 : 2019-서울서초-1126<br>
+                                호스팅서비스 제공자 : Amazon Web Services (AWS)<br>
+                                EMAIL : help@bunjang.co.kr | FAX : 02-598-8241<br>
+                                주소 : 서울특별시 서초구 서초대로 38길 12, 7, 10층<br>
+                                (서초동, 마제스타시티, 힐스테이트 서리풀)<br>
+                                <span>사업자정보 확인</span>
+                            </p>
+                        </div>
+                        <div class="mid_footer_left2">
+                            <div>
+                                <p>
+                                    <b>번개장터(주)더현대서울점</b> | 최재화, 강승현 | 365-85-01581<br>
+                                    서울특별시 영등포구 여의대로 108, 지하2층(여의도동, 파크원)<br>
+                                </p>
+                                <p>
+                                    <b>번개장터(주)코엑스점</b> | 최재화, 강승현 | 142-85-27412<br>
+                                    서울특별시 강남구 영동대로 513, 쇼핑몰동 B1층 C102호(삼성동, 코엑스)<br>
+                                </p>
+                                <p>
+                                    <b>번개장터(주)센터필드점</b> | 최재화, 강승현 | 808-85-01905<br>
+                                    서울특별시 강남구 테헤란로 231, 쇼핑몰동 1층 W124호(역삼동)(역삼동, 센터필드)<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mid_footer_right_area">
+                        <div class="mid_footer_right">
+                            <p>고객센터 ></p>
+                            <p>1670-2910</p>
+                            <p>운영시간 9시 - 18시 (주말/공휴일 휴무, 점심시간 12시 - 13시)</p>
+                            <span>공지사항</span> <span>문의하기</span><span>자주 묻는 질문</span>
+                        </div>
+                        <div id="mid_footer_right2">
+                            <p>우리은행 채무지급보증 안내</p>
+                            <p>
+                                번개장터㈜는 “BGZT Digital”, “BGZT Lab”, “BGZT Lab 1”, “BGZT Lab 2”, “BGZT
+                                컬렉션” 상점이 판매한
+                                상품에 한해, 고객님이 현금 결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.
+                            </p>
+                            <p>서비스 가입사실 확인</p>
+                            <p>Ⓒ Bungaejangter. Inc All rights reserved.</p>
+                        </div>
+                    </div>
+                    <div id="bot_footer_area">
+                        <div class="bot_footer_left">
+                            <div>
+                                <img src="images/market/footer_img.png" alt="footer이미지">
+                            </div>
+                            <p>
+                                [인증범위] 번개장터 중고거래 플랫폼 서비스 운영(심사받지 않은 물리적 인프라 제외)<br>
+                                [유효기간] 2021.05.18 ~ 2024.05.17
+                            </p>
+                        </div>
+                        <div class="bot_footer_right">
+                            <p>“BGZT Digital”, “BGZT Lab”, “BGZT Lab 1”, “BGZT Lab 2”, “BGZT 컬렉션” 상점의
+                                판매상품을 제외한 모든 상품들
+                                에 대하여, 번개장터㈜는 통신판매중개자로서 중고거래마켓 번개장터의 거래당사자가 아니며, 입점판매자가 등록한
+                                상품정보 및 거래에 대해 책임을 지지 않습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- // footer 영역 -->
+
+    </div>
+</body>
+
+</html>

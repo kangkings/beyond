@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>번개장터</title>
+    <link rel="shortcut icon" href="../images/market/favicon.ico">
+
+    <!--아이콘-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- 부트스트랩 icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- 부트스트랩 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="css/market/common.css">
+    <link rel="stylesheet" href="css/market/index.css">
+    <link rel="stylesheet" href="css/market/join.css">
+    <link rel="stylesheet" href="css/goods/goods_selling_form.css">
+    <link rel="stylesheet" href="css/seller_header.css">
+
+
+    <!-- js -->
+    <script src="js/market/jquery-3.6.0.min.js"></script>
+    <script src="js/market/menu_hover.js"></script>
+    <script src="js/market/login_modal.js"></script>
+    
+    <style>
+        .product-name{
+            display: none;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <a id="skipNav" href="#contents-area">본문 바로가기</a>
+    <div id="root">
+        <div class="css-ey8mg8" style="">
+            <div class="css-1rhwfdb">
+                <header class="css-fzv4fk"><a href="판매자 입찰 수정_조회.html"><img
+                            src="https://seller.bunjang.co.kr/static/js/../../static/media/Biz_type.2115f5da70bff8d5b30c4ebc2ed0eed2.svg"
+                            srcset="https://seller.bunjang.co.kr/static/js/../../static/media/Biz_type.2115f5da70bff8d5b30c4ebc2ed0eed2.svg 500w, https://seller.bunjang.co.kr/static/js/../../static/media/Biz_type.2115f5da70bff8d5b30c4ebc2ed0eed2.svg 1000w"
+                            alt="logo" class="css-1n6kgi5"></a>
+                    <div class="css-fdexoo">
+                    </div>
+                    <div><button type="button" class="css-1053wox">
+                            <div class="css-23v5d0">상점83627091호</div>
+                            <img src="images/기본프로필.png"
+                                alt="" width="22" height="22" class="css-4fhydt">
+                        </button></div>
+                </header>
+            </div>
+        </div>
+    </div>
+        <!-- main_content 영역 -->
+        <div id="main_content">
+        
+            <!--판매 폼-->
+            <section class="goods_form">
+                <h2>입찰 등록 <span class="red">*필수항목</span></h2>
+                <form action="" class="frm_selling_goods">
+                    <div class="goods_tag_area">
+                        <p>입찰 번호</p>
+                        <div>
+                            <p>
+                                12345
+                            </p>
+                        </div>
+                    </div>
+                    <div class="goods_tag_area">
+                        <p>공구 번호</p>
+                        <div>
+                            <p>
+                                29483
+                            </p>
+                        </div>
+                    </div>
+                    <div class="goods_tag_area">
+                        <p>공구 제목</p>
+                        <div>
+                            <p>
+                                공구 제목
+                            </p>
+                        </div>
+                    </div>
+                    <div class="goods_tag_area">
+                        <p>설명</p>
+                        <div>
+                            <p>
+                                딸기 1kg 총 10개 공구모집 합니다. 맛있는 딸기 많은 입찰 부탁드립니다. <br/><br/>
+                                가격도 싸게 해주세요~~
+                            </p>
+                        </div>
+                    </div>
+                    <div class="goods_images_area">
+                        <p>상품<span class="red">*</span>
+                        </p>
+                        <div>
+                            <div class="goods_images">
+                                <div>
+                                    내 상품 조회
+                                    <input name="goodsImage">
+                                </div>
+                                <div class="preview_wrap"></div>
+                            </div>
+                            <div class ="product-name">
+                                유기농 딸기 1KG
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods_price_area">
+                        <p>가격<span class="red">*</span></p>
+                        <div class="goods_price">
+                            <p><input type="text" name="goodsPrice" placeholder="숫자만 입력해주세요" oninput="valueIsNumber(event)">원</p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <!-- // main_content 영역 -->
+        <!-- footer 영역 -->
+        <div class="btn_submit_area">
+            <div class="inner_submit">
+                <!--폼으로 등록 테스트 하실 때 type=submit으로 바꿔서 진행해주세요-->
+                <input type="button" class="btn_goods_submit" value="등록하기">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
