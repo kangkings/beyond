@@ -1,0 +1,7 @@
+// 자바 프로젝트의 build.gradle과 같이 프로잭트의 의존성 관리 및 빌드 관리
+
+{
+    "dependencies":{
+        "body"
+    }
+}
