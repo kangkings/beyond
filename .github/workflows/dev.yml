@@ -1,0 +1,21 @@
+name: devops test
+
+on:
+  push:
+    branches: [ dev ]
+    
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: get code from github
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_KEY }} #우리 ssh 유저의 기반에 따라서 사용하는 파일이 ppk, pem인지 여부가 바뀐다.
+        port: ${{ secrets.REMOTE_PORT }}
+        script: |
+          echo test > /tmp/abcd
